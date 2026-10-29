@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Layout({
 	children,
@@ -23,7 +24,10 @@ export function Layout({
 						Learning
 					</a>
 				</nav>
-				{editing && <span className="text-xs text-muted-foreground">Editing</span>}
+				<div className="flex items-center gap-3">
+					{editing && <span className="text-xs text-muted-foreground">Editing</span>}
+					<ThemeToggle />
+				</div>
 			</header>
 			<main className="flex-1 py-10">{children}</main>
 			<footer className="flex flex-wrap items-center justify-between gap-4 border-t py-6 text-xs text-muted-foreground">

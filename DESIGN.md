@@ -14,8 +14,10 @@ and nothing else. Progress bars are not actions: they use `foreground`, never bl
 
 ## Tokens
 
-shadcn's variables carry the Site's values. Light values sit on `:root`; dark values in
-`@media (prefers-color-scheme: dark)`. There is no theme toggle: the system decides.
+shadcn's variables carry the Site's values. Light values sit on `:root`, dark values on
+`.dark`. The light/dark choice is the `theme` cookie on `.mehmetcinar.com`, shared with the Site
+(ADR 0002 in the Site repo): the inline script in `index.html` applies it before the first
+paint, or the system setting when there is no cookie, and the header toggle writes it.
 
 | Token                       | Role                               | Light                   | Dark                   |
 | --------------------------- | ---------------------------------- | ----------------------- | ---------------------- |
