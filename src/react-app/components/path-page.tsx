@@ -32,11 +32,11 @@ export function PathPage({
 	return (
 		<section className="grid gap-10">
 			<div className="grid gap-3">
-				<h1 className="text-3xl font-semibold tracking-tight text-balance">{path.title}</h1>
+				<h1 className="text-2xl font-bold text-balance sm:text-3xl">{path.title}</h1>
 				<p className="max-w-prose text-muted-foreground">{path.description}</p>
 				<div className="grid gap-2 pt-2">
 					<Bar value={stats.percent} className="h-1.5" aria-label={`${stats.percent}% complete`} />
-					<p className="flex flex-wrap justify-between gap-2 text-xs text-muted-foreground tabular-nums">
+					<p className="flex flex-wrap justify-between gap-2 text-sm text-muted-foreground tabular-nums">
 						<span>
 							{stats.percent}% · {stats.parts.done}/{stats.parts.total} parts · {stats.stagesDone}/
 							{path.stages.length} stages
@@ -53,7 +53,7 @@ export function PathPage({
 					return (
 						<li key={stage.id} className="grid gap-4">
 							<div className="grid gap-1">
-								<div className="flex items-center gap-3 text-xs text-muted-foreground">
+								<div className="flex items-center gap-3 text-sm text-muted-foreground">
 									<span className="tabular-nums">Stage {index + 1}</span>
 									{isCurrent && <Badge variant="outline">Current</Badge>}
 									{s.complete && <Badge variant="secondary">Done</Badge>}
@@ -61,8 +61,8 @@ export function PathPage({
 										{s.coursesDone}/{s.coursesTotal} courses
 									</span>
 								</div>
-								<h2 className="text-xl font-semibold text-balance">{stage.title}</h2>
-								<p className="text-sm text-muted-foreground">{stage.summary}</p>
+								<h2 className="text-2xl font-semibold tracking-wide text-balance">{stage.title}</h2>
+								<p className="text-muted-foreground">{stage.summary}</p>
 							</div>
 
 							<ul className="grid gap-2">
@@ -76,14 +76,14 @@ export function PathPage({
 												className="grid w-full gap-2 rounded-lg border p-4 text-left transition-colors hover:border-foreground/30 focus-visible:outline-2 focus-visible:outline-ring"
 											>
 												<span className="flex items-baseline justify-between gap-4">
-													<span dir="auto" className="font-medium">
+													<span dir="auto" className="text-lg font-medium">
 														{course.title}
 													</span>
-													<span className="shrink-0 text-xs tabular-nums text-muted-foreground">
+													<span className="shrink-0 text-sm tabular-nums text-muted-foreground">
 														{c.complete ? "Done" : `${c.done}/${c.total}`}
 													</span>
 												</span>
-												<span className="text-xs text-muted-foreground">
+												<span className="text-sm text-muted-foreground">
 													{[course.publisher, course.note].filter(Boolean).join(" · ")}
 												</span>
 												<Bar value={c.total ? (c.done / c.total) * 100 : 0} className="h-1" />
@@ -93,7 +93,7 @@ export function PathPage({
 								})}
 							</ul>
 
-							<label className="flex items-start gap-3 rounded-lg bg-muted p-4 text-sm">
+							<label className="flex items-start gap-3 rounded-lg bg-muted p-4">
 								<Checkbox
 									id={`checkpoint-${stage.id}`}
 									className="mt-0.5"
@@ -102,7 +102,7 @@ export function PathPage({
 									onCheckedChange={() => toggleCheckpoint(stage.id)}
 								/>
 								<span>
-									<span className="block text-xs font-medium uppercase tracking-wide text-muted-foreground">
+									<span className="block text-sm font-medium uppercase tracking-wide text-muted-foreground">
 										Checkpoint
 									</span>
 									{stage.checkpoint}
@@ -110,8 +110,8 @@ export function PathPage({
 							</label>
 
 							{stage.extras.length > 0 && (
-								<details className="text-sm">
-									<summary className="cursor-pointer text-xs text-muted-foreground">
+								<details>
+									<summary className="cursor-pointer text-sm text-muted-foreground">
 										Also good · {stage.extras.length}
 									</summary>
 									<ul className="mt-2 grid gap-1 pl-4">
@@ -139,8 +139,8 @@ export function PathPage({
 
 			{path.references.length > 0 && (
 				<section className="grid gap-3 border-t pt-8">
-					<h2 className="text-lg font-semibold">Keep at hand</h2>
-					<ul className="grid gap-1 text-sm">
+					<h2 className="text-2xl font-semibold tracking-wide">Keep at hand</h2>
+					<ul className="grid gap-1">
 						{path.references.map((r) => (
 							<li key={r.url} className="text-muted-foreground">
 								<a

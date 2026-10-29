@@ -42,7 +42,7 @@ export function CourseDialog({
 						{course.title}
 					</DialogTitle>
 					<DialogDescription>{course.summary ?? course.publisher}</DialogDescription>
-					<p className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-muted-foreground">
+					<p className="flex flex-wrap gap-x-3 gap-y-1 text-sm text-muted-foreground">
 						{[course.publisher, course.duration, course.note].filter(Boolean).map((fact) => (
 							<span key={fact}>{fact}</span>
 						))}
@@ -51,7 +51,7 @@ export function CourseDialog({
 
 				<div className="grid gap-1.5">
 					<Bar value={stats.total ? (stats.done / stats.total) * 100 : 0} className="h-1.5" />
-					<p className="text-xs tabular-nums text-muted-foreground">
+					<p className="text-sm tabular-nums text-muted-foreground">
 						{stats.done} of {stats.total} done
 						{stats.optionalTotal > 0 && ` · optional ${stats.optionalDone} of ${stats.optionalTotal}`}
 						{!editing && " · read only"}
@@ -70,7 +70,7 @@ export function CourseDialog({
 									onCheckedChange={() => onTogglePart(part.id)}
 									aria-label={`Done: ${part.title}`}
 								/>
-								<div className="grid min-w-0 gap-0.5 text-sm">
+								<div className="grid min-w-0 gap-0.5">
 									<span className="flex flex-wrap items-baseline gap-2">
 										{part.url ? (
 											<a
@@ -89,13 +89,13 @@ export function CourseDialog({
 										)}
 										{part.optional && <Badge variant="outline">Optional</Badge>}
 									</span>
-									{part.note && <span className="text-xs text-muted-foreground">{part.note}</span>}
+									{part.note && <span className="text-sm text-muted-foreground">{part.note}</span>}
 								</div>
 							</li>
 						))}
 					</ul>
 				) : (
-					<p className="text-sm text-muted-foreground">
+					<p className="text-muted-foreground">
 						This course is one unit: watch or read it, then mark it as done.
 					</p>
 				)}

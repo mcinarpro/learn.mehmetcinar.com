@@ -11,14 +11,14 @@ export function ThemeToggle() {
 	return (
 		<button
 			type="button"
-			className="grid size-8 place-items-center rounded-md hover:text-primary focus-visible:outline-2 focus-visible:outline-ring"
+			className="grid size-9 place-items-center rounded-md hover:text-primary focus-visible:outline-2 focus-visible:outline-ring"
 			aria-label={`Switch to ${next} theme`}
 			onClick={() => {
 				setTheme(next);
 				setState(next);
 			}}
 		>
-			{theme === "dark" ? <SunIcon className="size-4" /> : <MoonIcon className="size-4" />}
+			{theme === "dark" ? <SunIcon className="size-6" /> : <MoonIcon className="size-6" />}
 		</button>
 	);
 }
