@@ -88,6 +88,8 @@
 	html {
 		@apply font-sans;
 		color-scheme: light;
+		/* Stage anchors land below the sticky header. */
+		scroll-padding-top: 4.5rem;
 	}
 	body {
 		@apply bg-background text-foreground antialiased;

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ChevronRightIcon } from "lucide-react";
 import type { Course, LearningPath } from "../../content/schema";
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -34,24 +35,66 @@ export function PathPage({
 			<div className="grid gap-3">
 				<h1 className="text-2xl font-bold text-balance sm:text-3xl">{path.title}</h1>
 				<p className="max-w-prose text-muted-foreground">{path.description}</p>
-				<div className="grid gap-2 pt-2">
-					<Bar value={stats.percent} className="h-1.5" aria-label={`${stats.percent}% complete`} />
-					<p className="flex flex-wrap justify-between gap-2 text-sm text-muted-foreground tabular-nums">
-						<span>
-							{stats.percent}% · {stats.parts.done}/{stats.parts.total} parts · {stats.stagesDone}/
-							{path.stages.length} stages
-						</span>
-						<span aria-live="polite">{STATUS_TEXT[status]}</span>
-					</p>
-				</div>
 			</div>
 
-			<ol className="grid gap-10">
+			<div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-12">
+				<aside className="grid content-start gap-8 lg:sticky lg:top-20 lg:order-last lg:max-h-[calc(100svh-6rem)] lg:self-start lg:overflow-y-auto lg:pr-2 lg:pb-4 lg:[scrollbar-width:thin]">
+					<div className="grid gap-2">
+						<SideLabel>Progress</SideLabel>
+						<p className="text-3xl font-semibold tabular-nums">{stats.percent}%</p>
+						<Bar value={stats.percent} className="h-1.5" aria-label={`${stats.percent}% complete`} />
+						<p className="text-sm text-muted-foreground tabular-nums">
+							{stats.parts.done}/{stats.parts.total} parts · {stats.stagesDone}/{path.stages.length} stages
+						</p>
+						{status !== "idle" && (
+							<p className="text-sm text-muted-foreground" aria-live="polite">
+								{STATUS_TEXT[status]}
+							</p>
+						)}
+					</div>
+
+					<nav className="grid gap-2" aria-label="Stages">
+						<SideLabel>Stages</SideLabel>
+						<ol className="grid gap-1">
+							{path.stages.map((stage, index) => {
+								const s = stageStats(stage, progress);
+								const isCurrent = stats.current?.id === stage.id;
+								return (
+									<li key={stage.id}>
+										<a
+											href={`#stage-${stage.id}`}
+											className={`flex items-baseline gap-2 py-1 hover:text-primary ${isCurrent ? "font-medium text-foreground" : "text-muted-foreground"}`}
+										>
+											<span className="tabular-nums">{index + 1}.</span>
+											<span className="min-w-0 flex-1">{stage.title}</span>
+											<span className="text-sm tabular-nums">
+												{s.coursesDone}/{s.coursesTotal}
+											</span>
+										</a>
+									</li>
+								);
+							})}
+						</ol>
+					</nav>
+
+					{path.references.length > 0 && (
+						<details>
+							<summary className="cursor-pointer text-sm font-medium tracking-wide text-muted-foreground uppercase">
+								Keep at hand · {path.references.length}
+							</summary>
+							<div className="mt-3">
+								<References links={path.references} />
+							</div>
+						</details>
+					)}
+				</aside>
+
+				<ol className="grid gap-12">
 				{path.stages.map((stage, index) => {
 					const s = stageStats(stage, progress);
 					const isCurrent = stats.current?.id === stage.id;
 					return (
-						<li key={stage.id} className="grid gap-4">
+						<li key={stage.id} id={`stage-${stage.id}`} className="grid gap-4">
 							<div className="grid gap-1">
 								<div className="flex items-center gap-3 text-sm text-muted-foreground">
 									<span className="tabular-nums">Stage {index + 1}</span>
@@ -65,7 +108,7 @@ export function PathPage({
 								<p className="text-muted-foreground">{stage.summary}</p>
 							</div>
 
-							<ul className="grid gap-2">
+							<ul className="divide-y rounded-lg border">
 								{stage.courses.map((course) => {
 									const c = courseStats(course, progress);
 									return (
@@ -73,20 +116,25 @@ export function PathPage({
 											<button
 												type="button"
 												onClick={() => setOpenCourse(course)}
-												className="grid w-full gap-2 rounded-lg border p-4 text-left transition-colors hover:border-foreground/30 focus-visible:outline-2 focus-visible:outline-ring"
+												className="group grid w-full grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-3 text-left transition-colors first:rounded-t-lg last:rounded-b-lg hover:bg-muted/50 focus-visible:outline-2 focus-visible:outline-ring"
 											>
-												<span className="flex items-baseline justify-between gap-4">
-													<span dir="auto" className="text-lg font-medium">
+												<span className="grid gap-0.5">
+													<span dir="auto" className="text-lg font-medium group-hover:text-primary">
 														{course.title}
 													</span>
-													<span className="shrink-0 text-sm tabular-nums text-muted-foreground">
-														{c.complete ? "Done" : `${c.done}/${c.total}`}
+													<span className="text-sm text-muted-foreground">
+														{[course.publisher, course.note].filter(Boolean).join(" · ")}
 													</span>
 												</span>
-												<span className="text-sm text-muted-foreground">
-													{[course.publisher, course.note].filter(Boolean).join(" · ")}
+												<span className="flex items-center gap-3">
+													{c.done > 0 && !c.complete && (
+														<Bar value={(c.done / c.total) * 100} className="hidden h-1 w-20 sm:block" />
+													)}
+													<span className="text-sm tabular-nums text-muted-foreground">
+														{c.complete ? "Done" : `${c.done}/${c.total}`}
+													</span>
+													<ChevronRightIcon className="size-4 text-muted-foreground" aria-hidden="true" />
 												</span>
-												<Bar value={c.total ? (c.done / c.total) * 100 : 0} className="h-1" />
 											</button>
 										</li>
 									);
@@ -137,27 +185,7 @@ export function PathPage({
 				})}
 			</ol>
 
-			{path.references.length > 0 && (
-				<section className="grid gap-3 border-t pt-8">
-					<h2 className="text-2xl font-semibold tracking-wide">Keep at hand</h2>
-					<ul className="grid gap-1">
-						{path.references.map((r) => (
-							<li key={r.url} className="text-muted-foreground">
-								<a
-									className="text-foreground underline underline-offset-4 hover:text-primary"
-									href={r.url}
-									target="_blank"
-									rel="noopener"
-									dir="auto"
-								>
-									{r.title}
-								</a>
-								{r.note && ` – ${r.note}`}
-							</li>
-						))}
-					</ul>
-				</section>
-			)}
+			</div>
 
 			<CourseDialog
 				course={openCourse}
@@ -168,5 +196,24 @@ export function PathPage({
 				onSetParts={setParts}
 			/>
 		</section>
+	);
+}
+
+function SideLabel({ children }: { children: string }) {
+	return <h2 className="text-sm font-medium tracking-wide text-muted-foreground uppercase">{children}</h2>;
+}
+
+function References({ links }: { links: LearningPath["references"] }) {
+	return (
+		<ul className="grid gap-2 text-sm">
+			{links.map((r) => (
+				<li key={r.url}>
+					<a className="underline-offset-4 hover:text-primary hover:underline" href={r.url} target="_blank" rel="noopener" dir="auto">
+						{r.title}
+					</a>
+					{r.note && <span className="block text-muted-foreground">{r.note}</span>}
+				</li>
+			))}
+		</ul>
 	);
 }

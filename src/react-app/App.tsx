@@ -38,7 +38,7 @@ function App() {
 	}, [page]);
 
 	return (
-		<Layout editing={!!token} onEdit={() => (token ? saveToken(null) : setTokenOpen(true))}>
+		<Layout current={page.kind === "path" ? page.path.title : undefined} editing={!!token} onEdit={() => (token ? saveToken(null) : setTokenOpen(true))}>
 			{page.kind === "home" && <HomePage />}
 			{page.kind === "path" && <PathPage path={page.path} token={token} onRefused={onRefused} />}
 			{page.kind === "not-found" && (

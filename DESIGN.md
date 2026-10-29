@@ -41,4 +41,4 @@ Courses and Parts carry `dir="auto"`, so a right-to-left title (Arabic) lays out
 - A colour outside the tokens, or a hard-coded colour in a component.
 - Blue on something that cannot be clicked.
 - A second typeface.
-- A card around everything: borders mark Courses and Learning Paths, nothing else.
+- A card around everything: a bordered, divided list marks Courses and Learning Paths, nothing else.
