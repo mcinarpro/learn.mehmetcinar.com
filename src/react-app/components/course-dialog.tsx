@@ -4,6 +4,7 @@ import type { Course } from "../../content/schema";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
+import { DoneMark } from "@/components/done-mark";
 import { Progress as Bar } from "@/components/ui/progress";
 import {
 	Dialog,
@@ -62,14 +63,17 @@ export function CourseDialog({
 					<ul className="-mx-1 grid content-start gap-0.5 overflow-y-auto px-1">
 						{course.parts.map((part) => (
 							<li key={part.id} className="flex items-start gap-3 border-b border-dashed py-2 last:border-b-0">
-								<Checkbox
-									id={`part-${part.id}`}
-									className="mt-0.5"
-									checked={!!progress.parts[part.id]}
-									disabled={!editing}
-									onCheckedChange={() => onTogglePart(part.id)}
-									aria-label={`Done: ${part.title}`}
-								/>
+								{editing ? (
+									<Checkbox
+										id={`part-${part.id}`}
+										className="mt-0.5"
+										checked={!!progress.parts[part.id]}
+										onCheckedChange={() => onTogglePart(part.id)}
+										aria-label={`Done: ${part.title}`}
+									/>
+								) : (
+									<DoneMark done={!!progress.parts[part.id]} className="mt-1" />
+								)}
 								<div className="grid min-w-0 gap-0.5">
 									<span className="flex flex-wrap items-baseline gap-2">
 										{part.url ? (

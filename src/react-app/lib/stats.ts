@@ -49,6 +49,27 @@ export function pathStats(path: LearningPath, progress: Progress) {
 	};
 }
 
+export type NextUp =
+	| { kind: "part"; stage: Stage; course: Course; partTitle: string; partNumber: number | null }
+	| { kind: "checkpoint"; stage: Stage };
+
+// The first required Part not done, in reading order; then the Stage's Checkpoint once its
+// Courses are done. Null when the whole Learning Path is finished.
+export function nextUp(path: LearningPath, progress: Progress): NextUp | null {
+	for (const stage of path.stages) {
+		for (const course of stage.courses) {
+			if (courseStats(course, progress).complete) continue;
+			if (!course.parts.length) return { kind: "part", stage, course, partTitle: course.title, partNumber: null };
+			const index = course.parts.findIndex((p) => !p.optional && !progress.parts[p.id]);
+			if (index >= 0) {
+				return { kind: "part", stage, course, partTitle: course.parts[index].title, partNumber: index + 1 };
+			}
+		}
+		if (!progress.checkpoints[stage.id]) return { kind: "checkpoint", stage };
+	}
+	return null;
+}
+
 function sum(tallies: Tally[]): Tally {
 	return tallies.reduce((a, t) => ({ done: a.done + t.done, total: a.total + t.total }), { done: 0, total: 0 });
 }

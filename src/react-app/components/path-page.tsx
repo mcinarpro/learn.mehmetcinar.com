@@ -5,8 +5,9 @@ import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Progress as Bar } from "@/components/ui/progress";
 import { CourseDialog } from "@/components/course-dialog";
+import { DoneMark } from "@/components/done-mark";
 import { useProgress, type SaveStatus } from "@/lib/progress";
-import { courseStats, pathStats, stageStats } from "@/lib/stats";
+import { courseStats, nextUp, pathStats, stageStats } from "@/lib/stats";
 
 const STATUS_TEXT: Record<SaveStatus, string> = {
 	idle: "",
@@ -28,6 +29,7 @@ export function PathPage({
 	const { progress, status, togglePart, setParts, toggleCheckpoint } = useProgress(path.slug, token, onRefused);
 	const [openCourse, setOpenCourse] = useState<Course | null>(null);
 	const stats = pathStats(path, progress);
+	const next = nextUp(path, progress);
 	const editing = !!token;
 
 	return (
@@ -39,6 +41,30 @@ export function PathPage({
 
 			<div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-12">
 				<aside className="grid content-start gap-8 lg:sticky lg:top-20 lg:order-last lg:max-h-[calc(100svh-6rem)] lg:self-start lg:overflow-y-auto lg:pr-2 lg:pb-4 lg:[scrollbar-width:thin]">
+					<div className="grid gap-2">
+						<SideLabel>Next up</SideLabel>
+						{next?.kind === "part" && (
+							<button
+								type="button"
+								onClick={() => setOpenCourse(next.course)}
+								className="grid gap-0.5 text-left text-primary underline-offset-4 hover:underline"
+							>
+								<span dir="auto" className="font-medium">
+									{next.partTitle}
+								</span>
+								<span dir="auto" className="text-sm text-muted-foreground">
+									{next.partNumber ? `Part ${next.partNumber} of ${next.course.title}` : next.course.publisher}
+								</span>
+							</button>
+						)}
+						{next?.kind === "checkpoint" && (
+							<a href={`#stage-${next.stage.id}`} className="font-medium text-primary underline-offset-4 hover:underline">
+								Checkpoint of {next.stage.title}
+							</a>
+						)}
+						{!next && <p className="font-medium">Learning Path finished</p>}
+					</div>
+
 					<div className="grid gap-2">
 						<SideLabel>Progress</SideLabel>
 						<p className="text-3xl font-semibold tabular-nums">{stats.percent}%</p>
@@ -142,13 +168,16 @@ export function PathPage({
 							</ul>
 
 							<label className="flex items-start gap-3 rounded-lg bg-muted p-4">
-								<Checkbox
-									id={`checkpoint-${stage.id}`}
-									className="mt-0.5"
-									checked={s.checkpoint}
-									disabled={!editing}
-									onCheckedChange={() => toggleCheckpoint(stage.id)}
-								/>
+								{editing ? (
+									<Checkbox
+										id={`checkpoint-${stage.id}`}
+										className="mt-0.5"
+										checked={s.checkpoint}
+										onCheckedChange={() => toggleCheckpoint(stage.id)}
+									/>
+								) : (
+									<DoneMark done={s.checkpoint} className="mt-1" />
+								)}
 								<span>
 									<span className="block text-sm font-medium uppercase tracking-wide text-muted-foreground">
 										Checkpoint

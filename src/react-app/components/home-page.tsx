@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { learningPaths } from "../../content";
 import { emptyProgress, type Progress } from "../../content/progress";
+import type { LearningPath } from "../../content/schema";
 import { Progress as Bar } from "@/components/ui/progress";
 import { fetchProgress } from "@/lib/progress";
-import { pathStats } from "@/lib/stats";
+import { nextUp, pathStats } from "@/lib/stats";
 
 export function HomePage() {
 	const [progress, setProgress] = useState<Record<string, Progress>>({});
@@ -40,7 +41,7 @@ export function HomePage() {
 								<p className="text-muted-foreground">{path.description}</p>
 								<Bar value={stats.percent} className="h-1.5" />
 								<p className="text-sm text-muted-foreground">
-									{stats.current ? `Now: ${stats.current.title}` : "Finished"} · {stats.parts.done}/
+									{nextLabel(path, progress[path.slug] ?? emptyProgress)} · {stats.parts.done}/
 									{stats.parts.total} parts · {path.stages.length} stages
 								</p>
 							</a>
@@ -50,4 +51,10 @@ export function HomePage() {
 			</ul>
 		</section>
 	);
+}
+
+function nextLabel(path: LearningPath, progress: Progress) {
+	const next = nextUp(path, progress);
+	if (!next) return "Finished";
+	return next.kind === "part" ? `Next up: ${next.partTitle}` : `Next up: the checkpoint of ${next.stage.title}`;
 }
