@@ -1,0 +1,1064 @@
+# Learning Path: electricity. Ids are stored in Progress – never rename one once used.
+slug: electricity
+title: Electricity from zero
+description: "Learning home electricity from zero, for my own house: an old PHC home automation system and a Belgian inspection under the RGIE."
+lang: fr
+stages:
+  - id: fundamentals
+    title: Fundamentals
+    summary: Voltage, current, resistance, power, alternating current.
+    checkpoint: Pass the Sincère quizzes and explain voltage, current, resistance and power in your own words.
+    courses:
+      - id: physique-genie-civil
+        title: Électricité – un peu de Physique pour le Génie Civil (8 vidéos)
+        url: https://www.youtube.com/playlist?list=PLr-nc25uA0zSfRzYBLXNn-0K7PQmccY1d
+        publisher: YouTube
+        kind: playlist
+        note: start here
+        summary: Eight short French videos covering a domestic electrical installation, voltage/current/power calculations, Joule effect, motors, protection devices, electricity production and electrical safety.
+        duration: 2 h 02 min total (8 videos)
+        parts:
+          - id: physique-genie-civil-electricite-01-structure-dune-installation-elect
+            title: "Électricité 01 : Structure d'une installation électrique individuelle"
+            url: https://www.youtube.com/watch?v=M4rWJkGGnr4
+            note: 17:28
+          - id: physique-genie-civil-electricite-02a-comment-calculer-une-tension-une
+            title: "Électricité 02A :  Comment calculer une tension, une intensité et une puissance ?"
+            url: https://www.youtube.com/watch?v=LFRsHaWGr0M
+            note: 18:46
+          - id: physique-genie-civil-electricite-02b-comment-calculer-une-intensite-u
+            title: "Électricité 02B : Comment calculer une intensité, une tension et une puissance ?"
+            url: https://www.youtube.com/watch?v=dMDCDjF9P94
+            note: 10:45
+          - id: physique-genie-civil-electricite-03a-quest-ce-que-leffet-joule
+            title: "Électricité 03A : Qu'est-ce que l'effet Joule ?"
+            url: https://www.youtube.com/watch?v=TBvPPb058b4
+            note: 17:14
+          - id: physique-genie-civil-electricite-03b-comment-convertir-lenergie-elect
+            title: "Électricité 03B : Comment convertir l'énergie électrique en énergie mécanique ?"
+            url: https://www.youtube.com/watch?v=m1pf6w-XzOY
+            note: 15:35
+          - id: physique-genie-civil-electricite-05-comment-produire-de-lelectricite
+            title: "Électricité 05 : Comment produire de l'électricité ?"
+            url: https://www.youtube.com/watch?v=tJmeXBSeNfo
+            note: 10:37
+          - id: physique-genie-civil-electricite-04-comment-proteger-son-installation
+            title: "Électricité 04 : Comment protéger son installation électrique ?"
+            url: https://www.youtube.com/watch?v=QGLJ5wSU54w
+            note: 13:04
+          - id: physique-genie-civil-electricite-06-comment-se-proteger-de-lelectrici
+            title: "Électricité 06 : Comment se protéger de l'électricité ?"
+            url: https://www.youtube.com/watch?v=lETI_B1GtKI
+            note: 19:01
+      - id: sincere-ch1
+        title: Cours d'Electricité – Chapitre 1 Introduction
+        url: http://fabrice.sincere.free.fr/cm_electricite/cours%20electricite%20intro.pdf
+        publisher: Fabrice Sincère
+        kind: pdf
+        note: PDF, 31 slides
+        summary: "Introductory electrokinetics slides: current, Kirchhoff's node and loop laws, voltage, Ohm's law, resistivity, power, energy and Joule's law."
+        duration: 31 slides
+        parts:
+          - id: sincere-ch1-1-1-definitions-courant-electrique
+            title: 1-1- Définitions (courant électrique)
+            url: http://fabrice.sincere.free.fr/cm_electricite/cours%20electricite%20intro.pdf#page=3
+            note: p. 3–9
+          - id: sincere-ch1-1-2-loi-des-n-uds-1ere-loi-de-kirchhoff
+            title: 1-2- Loi des nœuds (1ère loi de Kirchhoff)
+            url: http://fabrice.sincere.free.fr/cm_electricite/cours%20electricite%20intro.pdf#page=10
+            note: p. 10–11
+          - id: sincere-ch1-2-1-definitions-tension-electrique
+            title: 2-1- Définitions (tension électrique)
+            url: http://fabrice.sincere.free.fr/cm_electricite/cours%20electricite%20intro.pdf#page=12
+            note: p. 12–14
+          - id: sincere-ch1-2-2-loi-des-branches-2nd-loi-de-kirchhoff
+            title: 2-2- Loi des branches (2nd loi de Kirchhoff)
+            url: http://fabrice.sincere.free.fr/cm_electricite/cours%20electricite%20intro.pdf#page=15
+            note: p. 15–18
+          - id: sincere-ch1-3-1-loi-dohm
+            title: 3-1- Loi d’Ohm
+            url: http://fabrice.sincere.free.fr/cm_electricite/cours%20electricite%20intro.pdf#page=19
+            note: p. 19–21
+          - id: sincere-ch1-3-2-resistance-electrique-dun-conducteur-ohmique
+            title: 3-2- Résistance électrique d’un conducteur ohmique / 3-3- Echelle des résistivités
+            url: http://fabrice.sincere.free.fr/cm_electricite/cours%20electricite%20intro.pdf#page=22
+            note: p. 22–25
+          - id: sincere-ch1-4-1-puissance-electrique-4-2-energie-electrique
+            title: 4-1- Puissance électrique / 4-2- Energie électrique
+            url: http://fabrice.sincere.free.fr/cm_electricite/cours%20electricite%20intro.pdf#page=26
+            note: p. 26–28
+          - id: sincere-ch1-4-3-effet-joule-4-4-loi-de-joule
+            title: 4-3- Effet Joule / 4-4- Loi de Joule
+            url: http://fabrice.sincere.free.fr/cm_electricite/cours%20electricite%20intro.pdf#page=29
+            note: p. 29–31
+      - id: sincere-qcm
+        title: Cours d'Electricité avec QCM et exercices corrigés
+        url: http://fabrice.sincere.free.fr/electricite.htm
+        publisher: Fabrice Sincère
+        kind: course
+        note: course + quizzes · skip Thévenin/Norton
+        summary: Fabrice Sincère's three-chapter electricity course (introduction, DC circuits, AC sinusoidal) with online quizzes, corrected exercises and simulation annexes.
+        duration: 3 chapter PDFs, 6 QCM, 51 corrected exercises
+        parts:
+          - id: sincere-qcm-chapitre-1-introduction
+            title: Chapitre 1 Introduction
+            url: http://fabrice.sincere.free.fr/cm_electricite/cours%20electricite%20intro.pdf
+            note: PDF 31 slides, 520 ko
+          - id: sincere-qcm-qcm-loi-des-mailles-loi-des-n-uds-puissance-8-qu
+            title: QCM Loi des mailles - Loi des nœuds - Puissance (8 questions)
+            url: http://fabrice.sincere.free.fr/qcm/qcm.php?nom=qcm_kirchhoff
+            note: 8 questions
+          - id: sincere-qcm-qcm-multimetre-10-questions
+            title: QCM Multimètre (10 questions)
+            url: http://fabrice.sincere.free.fr/qcm/qcm.php?nom=qcm_multimetre
+            note: 10 questions
+          - id: sincere-qcm-chapitre-2-regime-continu
+            title: Chapitre 2 Régime continu
+            url: http://fabrice.sincere.free.fr/cm_electricite/cours%20electricite%20regime%20continu.pdf
+            note: PDF 468 ko; includes Thévenin/Norton, Millman, superposition
+          - id: sincere-qcm-qcm-batterie-daccumulateurs-8-questions
+            title: QCM Batterie d'accumulateurs (8 questions)
+            url: http://fabrice.sincere.free.fr/qcm/qcm.php?nom=qcm_batterie
+            note: 8 questions
+          - id: sincere-qcm-exercices-2-01-a-2-08-resistance-equivalente-tra
+            title: Exercices 2-01 à 2-08 (résistance équivalente, transformateur, puissance maximale, alimentation, boutons poussoirs, voltmètre)
+            url: http://fabrice.sincere.free.fr/cm_electricite/exercices%20electricite/Exercice%20Electricite%202-01.pdf
+            note: 8 exercices corrigés, 2-01 to 2-08 (one PDF each)
+          - id: sincere-qcm-exercices-2-09-a-2-16-fusible-circuit-lineaire-b
+            title: Exercices 2-09 à 2-16 (fusible, circuit linéaire, batterie et ampoule, démarreur, piles, pont de Wheatstone)
+            url: http://fabrice.sincere.free.fr/cm_electricite/exercices%20electricite/Exercice%20Electricite%202-09.pdf
+            note: 8 exercices corrigés, 2-09 to 2-16 (one PDF each)
+          - id: sincere-qcm-exercices-2-17-a-2-21-circuit-lineaire-en-regime
+            title: Exercices 2-17 à 2-21 (circuit linéaire en régime continu)
+            url: http://fabrice.sincere.free.fr/cm_electricite/exercices%20electricite/Exercice%20Electricite%202-17.pdf
+            note: 5 exercices corrigés, 2-17 to 2-21
+            optional: true
+          - id: sincere-qcm-exercice-2-22-modeles-de-thevenin-et-norton
+            title: "Exercice 2-22 : modèles de Thévenin et Norton"
+            url: http://fabrice.sincere.free.fr/cm_electricite/exercices%20electricite/Exercice%20Electricite%202-22.pdf
+            optional: true
+          - id: sincere-qcm-exercice-2-23-porte-nand-74ls00
+            title: "Exercice 2-23 : porte NAND 74LS00"
+            url: http://fabrice.sincere.free.fr/cm_electricite/exercices%20electricite/Exercice%20Electricite%202-23.pdf
+            optional: true
+          - id: sincere-qcm-8-autres-exercices-corriges
+            title: 8 autres exercices corrigés
+            url: http://fabrice.sincere.free.fr/cm_electricite/TDelectrocinetiqueCh2v1.0.pdf
+            note: Exercices 2-24 to 2-31 (Thévenin/Norton, Millman, Wheatstone), 41 ko
+            optional: true
+          - id: sincere-qcm-annexe-1-simulation-de-lexercice-2-10-circuit-en
+            title: "Annexe 1 : simulation de l'exercice 2-10 (circuit en régime continu) avec LTspice"
+            url: http://fabrice.sincere.free.fr/LTspice/exercice2_10/regime_continu_2_10_ltspice.zip
+            optional: true
+          - id: sincere-qcm-annexe-2-simulation-de-lexercice-2-27-adaptation
+            title: "Annexe 2 : simulation de l'exercice 2-27 (adaptation d'impédances) avec LTspice"
+            url: http://fabrice.sincere.free.fr/LTspice/adaptation_impedance/adaption_impedance_ltspice.zip
+            optional: true
+          - id: sincere-qcm-chapitre-3-regime-sinusoidal
+            title: Chapitre 3 Régime sinusoïdal
+            url: http://fabrice.sincere.free.fr/cm_electricite/cours%20electricite%20regime%20sinusoidal.pdf
+            note: PDF 447 ko; complex numbers, Fresnel, impedance
+            optional: true
+          - id: sincere-qcm-annexe-3-les-dipoles-passifs-lineaires-en-regime
+            title: "Annexe 3 : les dipôles passifs linéaires en régime sinusoïdal"
+            url: http://fabrice.sincere.free.fr/cm_electricite/cours_electricite_Regime_sinusoidal_annexe.pdf
+            note: 17 ko
+            optional: true
+          - id: sincere-qcm-qcm-en-ligne-5-questions-sur-le-dephasage
+            title: "QCM en ligne : 5 questions sur le déphasage"
+            url: http://fabrice.sincere.free.fr/qcm/qcm.php?nom=qcm_dephasage
+            note: 5 questions
+            optional: true
+          - id: sincere-qcm-qcm-en-ligne-5-questions-sur-les-circuits-lineai
+            title: "QCM en ligne : 5 questions sur les circuits linéaires en régime sinusoïdal"
+            url: http://fabrice.sincere.free.fr/qcm/qcm.php?nom=qcm_sinus
+            note: 5 questions
+            optional: true
+          - id: sincere-qcm-exercices-3-01-a-3-13-valeur-efficace-impedance
+            title: Exercices 3-01 à 3-13 (valeur efficace, impédance, circuits RL/RC, quartz, filtre, sonde)
+            url: http://fabrice.sincere.free.fr/cm_electricite/exercices%20electricite/Exercice%20Electricite%203-01.pdf
+            note: 13 exercices corrigés, 3-01 to 3-13
+            optional: true
+          - id: sincere-qcm-7-autres-exercices-corriges
+            title: 7 autres exercices corrigés
+            url: http://fabrice.sincere.free.fr/cm_electricite/TDelectrocinetiqueCh3v1.00.pdf
+            note: Exercices 3-14 to 3-20, 56 ko
+            optional: true
+          - id: sincere-qcm-annexes-4-a-7-simulation-excel-ltspice-des-circu
+            title: "Annexes 4 à 7 : simulation Excel / LTspice des circuits RL, RC, RLC série en régime sinusoïdal"
+            url: http://fabrice.sincere.free.fr/electricite.htm
+            note: Excel sheets + LTspice project
+            optional: true
+          - id: sincere-qcm-qcm-en-ligne-10-questions-sur-lelectricite
+            title: "QCM en ligne : 10 questions sur l'électricité"
+            url: http://fabrice.sincere.free.fr/qcm/qcm.php?nom=qcm_elec
+            note: QCM de synthèse, 10 questions on all 3 chapters
+      - id: afpa-1
+        title: "Cours d'électricité : Tension, courant, puissance, énergie"
+        url: https://www.youtube.com/watch?v=TMNjEHojg-Q
+        publisher: Afpa
+        kind: video
+        note: video lesson 1
+        summary: Afpa recorded class introducing voltage, current, power and energy.
+        duration: 54 min 48 s
+      - id: afpa-2
+        title: "Cours d'électricité : Résistance, loi d'Ohm, loi de Joule"
+        url: https://www.youtube.com/watch?v=NAfVKvyldrs
+        publisher: Afpa
+        kind: video
+        note: video lesson 2
+        summary: Afpa recorded class on resistance, Ohm's law and Joule's law.
+        duration: 55 min 00 s
+      - id: afpa-3
+        title: "Cours d'électricité : Générateurs et récepteurs, l'alternatif"
+        url: https://www.youtube.com/watch?v=DNcPsPEHoKc
+        publisher: Afpa
+        kind: video
+        note: video lesson 3
+        summary: Afpa recorded class on generators and receivers and an introduction to alternating current.
+        duration: 52 min 47 s
+    extras:
+      - title: Électricité (Wikilivres)
+        url: https://fr.wikibooks.org/wiki/%C3%89lectricit%C3%A9
+        note: a complete free book, from basics to the transformer
+      - title: Cours d'électrocinétique
+        url: https://femto-physique.fr/electrocinetique/pdf/cours-electrocinetique.pdf
+        note: later – assumes maths
+      - title: Physique pour 1er bac informatique (ULB)
+        url: https://www.iihe.ac.be/~cvdvelde/Info/Cours/
+        note: later – derivatives and complex numbers
+  - id: residential-installation
+    title: The residential installation
+    summary: Distribution board, protection, différentiel, earth, circuits.
+    checkpoint: Name every device in a distribution board and say what it protects against.
+    courses:
+      - id: legrand
+        title: Le Guide de l'électricité – Normes, conseils, astuces
+        url: https://assets.legrand.com/general/legrand-gd/docpage_2013/media/gd28075.pdf
+        publisher: Legrand
+        kind: pdf
+        note: PDF guide · French rules
+        summary: "Legrand's consumer guide to French residential wiring under NF C 15-100: earthing, the distribution board, circuits, energy saving, lighting, comfort, multimedia networks and protection of people and property."
+        duration: 138 PDF pages (272 printed pages, two printed pages per PDF page)
+        parts:
+          - id: legrand-nf-c-15-100-une-norme-a-connaitre-la-mise-a-la-t
+            title: "NF C 15-100 : une norme à connaître · La mise à la terre · Les pièces d’eau et l’électricité"
+            url: https://assets.legrand.com/general/legrand-gd/docpage_2013/media/gd28075.pdf#page=4
+            note: PDF p. 4–7 (printed p. 4–11)
+          - id: legrand-le-tableau-electrique
+            title: Le tableau électrique
+            url: https://assets.legrand.com/general/legrand-gd/docpage_2013/media/gd28075.pdf#page=8
+            note: PDF p. 8–11 (printed p. 12–19)
+          - id: legrand-les-circuits-declairage-les-circuits-de-prises-l
+            title: Les circuits d’éclairage · Les circuits de prises · Les circuits chauffage et volets roulants
+            url: https://assets.legrand.com/general/legrand-gd/docpage_2013/media/gd28075.pdf#page=12
+            note: PDF p. 12–15 (printed p. 20–27)
+          - id: legrand-le-reseau-de-communication-la-gaine-technique-lo
+            title: Le réseau de communication · La gaine technique logement · Une bonne installation pour plus de sécurité
+            url: https://assets.legrand.com/general/legrand-gd/docpage_2013/media/gd28075.pdf#page=16
+            note: PDF p. 16–21 (printed p. 28–39)
+          - id: legrand-economiser-lelectricite
+            title: Économiser l’électricité
+            url: https://assets.legrand.com/general/legrand-gd/docpage_2013/media/gd28075.pdf#page=22
+            note: PDF p. 22–28 (printed p. 40–53)
+          - id: legrand-equiper-son-logement
+            title: Équiper son logement
+            url: https://assets.legrand.com/general/legrand-gd/docpage_2013/media/gd28075.pdf#page=29
+            note: PDF p. 29–42 (printed p. 54–81)
+          - id: legrand-vivre-et-seclairer
+            title: Vivre et s’éclairer
+            url: https://assets.legrand.com/general/legrand-gd/docpage_2013/media/gd28075.pdf#page=43
+            note: PDF p. 43–65 (printed p. 82–127)
+          - id: legrand-optimiser-son-confort
+            title: Optimiser son confort
+            url: https://assets.legrand.com/general/legrand-gd/docpage_2013/media/gd28075.pdf#page=66
+            note: PDF p. 66–87 (printed p. 128–171)
+          - id: legrand-souvrir-au-multimedia
+            title: S’ouvrir au multimédia
+            url: https://assets.legrand.com/general/legrand-gd/docpage_2013/media/gd28075.pdf#page=88
+            note: PDF p. 88–114 (printed p. 172–225)
+          - id: legrand-proteger-les-personnes-et-les-biens
+            title: Protéger les personnes et les biens
+            url: https://assets.legrand.com/general/legrand-gd/docpage_2013/media/gd28075.pdf#page=115
+            note: PDF p. 115–127 (printed p. 226–251)
+          - id: legrand-lexique-les-organismes-a-connaitre-schema-electr
+            title: Lexique · Les organismes à connaître · Schéma électrique général
+            url: https://assets.legrand.com/general/legrand-gd/docpage_2013/media/gd28075.pdf#page=128
+            note: PDF p. 128–132 (printed p. 252–261)
+            optional: true
+      - id: sitelec-tt
+        title: Les schémas de liaison à la terre en BT (TT / TN / IT)
+        url: https://www.sitelec.org/cours/abati/regneutre.htm
+        publisher: Sitelec
+        kind: web
+        note: the TT system Belgian homes use
+        summary: Short course page defining the three low-voltage earthing systems (TT, IT, TN-C/TN-S) and how each handles an insulation fault.
+        duration: 1 web page
+        parts:
+          - id: sitelec-tt-schema-tt
+            title: Schéma TT
+            url: https://www.sitelec.org/cours/abati/regneutre.htm
+          - id: sitelec-tt-schema-it
+            title: Schéma IT
+            url: https://www.sitelec.org/cours/abati/regneutre.htm
+          - id: sitelec-tt-schema-tn
+            title: Schéma TN
+            url: https://www.sitelec.org/cours/abati/regneutre.htm
+          - id: sitelec-tt-schema-tnc-ou-tna
+            title: Schéma TNC ou TNA
+            url: https://www.sitelec.org/cours/abati/regneutre.htm
+          - id: sitelec-tt-schema-tns-ou-tnb
+            title: Schéma TNS ou TNB
+            url: https://www.sitelec.org/cours/abati/regneutre.htm
+      - id: sitelec-diff
+        title: Dispositifs différentiels
+        url: https://www.sitelec.org/cours/abati/differentiel.htm
+        publisher: Sitelec
+        kind: web
+        note: how an RCD detects a leak
+        summary: "Short course page on residual-current devices: symbols, operating principle and sensitivity, and the AC / A / HI types."
+        duration: 1 web page
+        parts:
+          - id: sitelec-diff-symboles
+            title: Symboles
+            url: https://www.sitelec.org/cours/abati/differentiel.htm
+          - id: sitelec-diff-principe-de-fonctionnement
+            title: Principe de fonctionnement
+            url: https://www.sitelec.org/cours/abati/differentiel.htm
+          - id: sitelec-diff-differents-types
+            title: Différents types
+            url: https://www.sitelec.org/cours/abati/differentiel.htm
+      - id: uga-sae
+        title: "SAE 1.2 : Électricité dans l'habitat résidentiel"
+        url: https://chamilo.univ-grenoble-alpes.fr/courses/UGA030053/document/Ressource-etudiant/Poly_sae_1_2_armoire_domestique_partie1_25_26.pdf
+        publisher: Université Grenoble Alpes
+        kind: pdf
+        note: 69-page workbook
+        summary: "IUT Grenoble workbook for building a residential distribution board: lighting circuits, protection devices, contactor control, NF C 15-100 rules, the TT earthing system, plus two measurement/protection lab sessions and a home project."
+        duration: 69 pages
+        parts:
+          - id: uga-sae-tension-reseau-notion-de-puissance-installation
+            title: Tension réseau · Notion de puissance · Installation électrique domestique NFC -15100 · Les 3 types de schémas (Simple allumage, Interrupteur va et vient, Télérupteur et boutons poussoirs)
+            url: https://chamilo.univ-grenoble-alpes.fr/courses/UGA030053/document/Ressource-etudiant/Poly_sae_1_2_armoire_domestique_partie1_25_26.pdf#page=4
+            note: PDF p. 4–7
+          - id: uga-sae-mise-en-situation-pratique-1h-validation-du-mont
+            title: Mise en situation pratique (1h) · Validation du montage · Devoir maison
+            url: https://chamilo.univ-grenoble-alpes.fr/courses/UGA030053/document/Ressource-etudiant/Poly_sae_1_2_armoire_domestique_partie1_25_26.pdf#page=8
+            note: PDF p. 8–10
+          - id: uga-sae-application-depart-prise-16-a-les-differents-cir
+            title: Application départ prise 16 A · Les différents circuits · Surcharge et courts circuit protection du matériel
+            url: https://chamilo.univ-grenoble-alpes.fr/courses/UGA030053/document/Ressource-etudiant/Poly_sae_1_2_armoire_domestique_partie1_25_26.pdf#page=11
+            note: PDF p. 11–12
+          - id: uga-sae-defaut-disolement-protection-des-personnes-inter
+            title: "Défaut d’isolement : protection des personnes · Interrupteur différentiel · Les 2 catégories de défaut · Devoir maison"
+            url: https://chamilo.univ-grenoble-alpes.fr/courses/UGA030053/document/Ressource-etudiant/Poly_sae_1_2_armoire_domestique_partie1_25_26.pdf#page=13
+            note: PDF p. 13–15
+          - id: uga-sae-commande-par-contacteur-du-chauffage-avec-thermo
+            title: Commande par contacteur du chauffage avec thermostat · Commande du chauffe-eau en Heure creuse/Heure pleine · Commande de volets roulants · VMC
+            url: https://chamilo.univ-grenoble-alpes.fr/courses/UGA030053/document/Ressource-etudiant/Poly_sae_1_2_armoire_domestique_partie1_25_26.pdf#page=16
+            note: PDF p. 16–18
+          - id: uga-sae-norme-nfc-15-100-circuits-prises-prises-speciali
+            title: "Norme NFC 15-100 · Circuits prises + Prises spécialisées · Devoir maison Nomenclature : Compéter les lignes manquantes"
+            url: https://chamilo.univ-grenoble-alpes.fr/courses/UGA030053/document/Ressource-etudiant/Poly_sae_1_2_armoire_domestique_partie1_25_26.pdf#page=18
+            note: PDF p. 18–24
+          - id: uga-sae-schema-de-liaison-a-la-terre-tt
+            title: Schéma de liaison à la terre TT
+            url: https://chamilo.univ-grenoble-alpes.fr/courses/UGA030053/document/Ressource-etudiant/Poly_sae_1_2_armoire_domestique_partie1_25_26.pdf#page=25
+            note: PDF p. 25–26
+          - id: uga-sae-travaux-diriges-sur-les-schemas-de-liaison-a-la
+            title: Travaux dirigés sur les schémas de liaison à la terre
+            url: https://chamilo.univ-grenoble-alpes.fr/courses/UGA030053/document/Ressource-etudiant/Poly_sae_1_2_armoire_domestique_partie1_25_26.pdf#page=27
+            note: PDF p. 27–31
+          - id: uga-sae-tp-n-1-prise-en-main-des-appareils-de-mesure
+            title: TP n°1 Prise en main des appareils de mesure
+            url: https://chamilo.univ-grenoble-alpes.fr/courses/UGA030053/document/Ressource-etudiant/Poly_sae_1_2_armoire_domestique_partie1_25_26.pdf#page=32
+            note: PDF p. 32–42
+          - id: uga-sae-tp-n-2-protection-du-materiel-par-disjoncteur-2h
+            title: "TP n°2 : Protection du matériel par disjoncteur (2h)"
+            url: https://chamilo.univ-grenoble-alpes.fr/courses/UGA030053/document/Ressource-etudiant/Poly_sae_1_2_armoire_domestique_partie1_25_26.pdf#page=43
+            note: PDF p. 43–52
+          - id: uga-sae-tp-n-2-protection-des-personnes-2h
+            title: "TP n°2 : Protection des personnes (2h)"
+            url: https://chamilo.univ-grenoble-alpes.fr/courses/UGA030053/document/Ressource-etudiant/Poly_sae_1_2_armoire_domestique_partie1_25_26.pdf#page=53
+            note: PDF p. 53–59
+          - id: uga-sae-validation-de-la-competence-cahier-des-charges-d
+            title: Validation de la compétence · Cahier des charges du projet domestique
+            url: https://chamilo.univ-grenoble-alpes.fr/courses/UGA030053/document/Ressource-etudiant/Poly_sae_1_2_armoire_domestique_partie1_25_26.pdf#page=60
+            note: PDF p. 60–69
+      - id: ue1
+        title: Dossier pédagogique – Installations résidentielles UE1
+        url: https://www.etudierenhainaut.be/images/editeurs/ipam/Électricité/DP_Electricité_/215011U11D2_Installations_résidentielles_-_UE1.pdf
+        publisher: FWB promotion sociale
+        kind: pdf
+        note: checklist
+        summary: "FWB adult-education syllabus (code 2150 11 U 11 D2) for the first residential-installations unit: conduit and cable laying, basic lighting connections, DC electricity lab (Ohm's law, series/parallel) and reading installation plans under the RGIE."
+        duration: 240 periods (TP 96, labo 48, technologie 48, autonomie 48)
+        parts:
+          - id: ue1-4-1-tp-cintrer-des-tubes-et-fixer-des-goulottes
+            title: 4.1 TP – cintrer des tubes et fixer des goulottes et des chemins de câbles
+            note: identifier matériels et outillage; respecter le diamètre des canalisations; cintrage; placer la canalisation; fixation des conduits; amener les conduits au coffret
+          - id: ue1-4-1-tp-de-tirer-des-conducteurs
+            title: 4.1 TP – de tirer des conducteurs
+            note: identifier matériels et outillage; déroulement d’un câble; sections et couleurs imposées par le RGIE
+          - id: ue1-4-1-tp-de-respecter-les-regles-de-securite-conce
+            title: 4.1 TP – de respecter les règles de sécurité concernant les dangers de l’électricité
+            note: action du courant sur le corps humain; baladeuse en 24 V; locaux humides / secs
+          - id: ue1-4-1-tp-de-raccorder-des-appareils-usuels-a-parti
+            title: "4.1 TP – de raccorder des appareils usuels à partir de données précises, en poses apparente et encastrée : prises, interrupteurs (sch 1, sch 2, sch 5, sch 6, sch 7)"
+          - id: ue1-4-1-tp-de-differencier-temoin-et-signalisation
+            title: 4.1 TP – de différencier témoin et signalisation
+          - id: ue1-4-2-labo-de-reconnaitre-les-effets-du-courant-el
+            title: 4.2 Labo – de reconnaître les effets du courant électrique ; de respecter les règles de sécurité concernant les dangers de l’électricité
+          - id: ue1-4-2-labo-de-classer-les-conducteurs-et-les-isola
+            title: 4.2 Labo – de classer les conducteurs et les isolants usuels en fonction de leurs propriétés
+          - id: ue1-4-2-labo-danalyser-un-circuit-electrique
+            title: 4.2 Labo – d’analyser un circuit électrique
+            note: circuit élémentaire; coupure unipolaire et bipolaire; circuit ouvert / fermé
+          - id: ue1-4-2-labo-de-cerner-la-notion-de-courant-electriq
+            title: 4.2 Labo – de cerner la notion de courant électrique ; de mesurer l’intensité du courant électrique à l’aide d’un ampèremètre
+          - id: ue1-4-2-labo-de-cerner-la-notion-de-tension-electriq
+            title: 4.2 Labo – de cerner la notion de tension électrique ; de mesurer une tension à l’aide d’un voltmètre
+          - id: ue1-4-2-labo-de-cerner-la-notion-de-resistance-elect
+            title: 4.2 Labo – de cerner la notion de résistance électrique ; de mesurer la résistance électrique à l’aide d’un ohmmètre ; de vérifier la continuité d’un élément ou d’un circuit
+            note: ohm, kilo-ohm, mégohm; code des couleurs
+          - id: ue1-4-2-labo-dappliquer-la-loi-dohm-a-des-circuits-s
+            title: 4.2 Labo – d’appliquer la loi d’Ohm à des circuits simples ; de vérifier expérimentalement la loi d’Ohm
+          - id: ue1-4-2-labo-de-differencier-les-notions-de-travail
+            title: 4.2 Labo – de différencier les notions de travail, de puissance, de rendement et d’énergie électrique ; de relever la consommation d’énergie à l’aide d’un compteur
+          - id: ue1-4-2-labo-de-calculer-et-de-mesurer-des-resistanc
+            title: 4.2 Labo – de calculer et de mesurer des résistances couplées en série
+          - id: ue1-4-2-labo-de-calculer-et-de-mesurer-des-resistanc-2
+            title: 4.2 Labo – de calculer et de mesurer des résistances couplées en parallèle
+          - id: ue1-4-3-technologie-dinterpreter-le-schema-dimplanta
+            title: 4.3 Technologie – d’interpréter le schéma d’implantation ; de maîtriser la notion d’échelle
+          - id: ue1-4-3-technologie-de-realiser-les-schemas-de-princ
+            title: 4.3 Technologie – de réaliser les schémas de principe des installations d’éclairage ; d’établir le schéma unifilaire au départ du plan d’implantation
+          - id: ue1-4-3-technologie-de-decoder-et-dutiliser-les-symb
+            title: 4.3 Technologie – de décoder et d’utiliser les symboles électriques ; d’identifier le matériel électrique figurant dans l’installation donnée
+          - id: ue1-4-3-technologie-dexpliquer-le-fonctionnement-de
+            title: 4.3 Technologie – d’expliquer le fonctionnement de l’appareillage figurant dans le schéma unifilaire proposé ; d’établir le mode opératoire de réalisation de l’installation donnée
+      - id: ue2
+        title: Dossier pédagogique – Installations résidentielles UE2
+        url: https://www.etudierenhainaut.be/images/editeurs/ipam/Électricité/DP_Installateur_Monteur_Electricité/215012U11D2_Installations_résidentielles_-_UE2.pdf
+        publisher: FWB promotion sociale
+        kind: pdf
+        note: télérupteurs, board, earthing
+        summary: "FWB adult-education syllabus (code 2150 12 U 11 D2) for the second residential-installations unit: basic metalwork, complex lighting circuits, wiring an 18-module distribution board, earthing and equipotential bonding under the RGIE."
+        duration: 160 periods (TP 96, technologie 32, autonomie 32)
+        parts:
+          - id: ue2-4-1-tp-operations-mecaniques-decouper-une-tole-r
+            title: "4.1 TP – opérations mécaniques : découper une tôle rectangulaire ; plier à l’étau une équerre"
+          - id: ue2-4-1-tp-operations-mecaniques-percer-faible-diame
+            title: "4.1 TP – opérations mécaniques : percer (faible diamètre et 8-12 mm, acier et non ferreux) ; limer un demi-rond ; limer un petit chanfrein"
+          - id: ue2-4-1-tp-operations-mecaniques-tarauder-un-trou-de
+            title: "4.1 TP – opérations mécaniques : tarauder un trou débouchant / un trou borgne ; fileter ; fraiser pour noyer une tête de vis ; riveter un rail"
+          - id: ue2-4-1-tp-de-realiser-un-exercice-de-synthese-exemp
+            title: "4.1 TP – de réaliser un exercice de synthèse (exemple : une petite console)"
+          - id: ue2-4-1-tp-de-realiser-des-cablages-a-laide-de-condu
+            title: 4.1 TP – de réaliser des câblages à l’aide de conducteurs souples
+            note: étamer; prolongateurs monophasés; connexions par serrage et par sertissage
+          - id: ue2-4-1-tp-realiser-le-montage-dune-installation-uti
+            title: 4.1 TP – réaliser le montage d’une installation utilisant sch 6/2, sch 6+6, sch 6+1
+          - id: ue2-4-1-tp-de-raccorder-des-appareils-en-poses-appar
+            title: "4.1 TP – de raccorder des appareils en poses apparente et encastrée : prises, interrupteurs, télérupteurs, minuteries, tubes luminescents, variateurs de lumière, interrupteurs crépusculaires, détecteurs, interrupteurs horaires,… ; de tester le bon fonctionnement du matériel"
+          - id: ue2-4-1-tp-dappliquer-les-techniques-en-vigueur-pour
+            title: 4.1 TP – d’appliquer les techniques en vigueur pour la pose des câbles et gaines dans le cadre d’une réalisation complète
+          - id: ue2-4-1-tp-didentifier-de-differencier-et-de-choisir
+            title: 4.1 TP – d’identifier, de différencier et de choisir le matériel électrique de protection ; de placer et de câbler les coffrets en fonction du RGIE et du réseau de distribution
+          - id: ue2-4-1-tp-de-prevoir-la-mise-a-la-terre-dune-instal
+            title: 4.1 TP – de prévoir la mise à la terre d’une installation domestique jusqu’au sectionneur de terre ; de prévoir les liaisons équipotentielles principales et complémentaires
+          - id: ue2-4-1-tp-dassurer-le-montage-et-le-raccordement-de
+            title: 4.1 TP – d’assurer le montage et le raccordement des équipements d’installations domestiques de base et de confort à un coffret divisionnaire (maximum 18 modules)
+          - id: ue2-4-2-technologie-de-differencier-les-techniques-e
+            title: 4.2 Technologie – de différencier les techniques en vigueur pour la pose des câbles et des gaines ; d’identifier la technique de mise en œuvre pour canaliser les gaines vers le coffret divisionnaire ; de choisir le mode de pose des gaines et des câbles destinés aux circuits de confort
+          - id: ue2-4-2-technologie-de-justifier-le-choix-des-compos
+            title: 4.2 Technologie – de justifier le choix des composants électriques placés dans le coffret divisionnaire ; de déterminer le mode de pose adéquat d’un coffret divisionnaire ; de choisir les éléments modulaires et leur emplacement
+          - id: ue2-4-2-technologie-de-tenir-compte-des-regles-et-de
+            title: 4.2 Technologie – de tenir compte des règles et des exigences des sociétés de distribution pour la pose de la colonne d’alimentation
+          - id: ue2-4-2-technologie-de-justifier-les-regles-a-suivre
+            title: 4.2 Technologie – de justifier les règles à suivre pour réaliser la mise à la terre ; de justifier les règles à suivre pour réaliser la liaison équipotentielle principale et la liaison équipotentielle supplémentaire
+          - id: ue2-4-2-technologie-dinterpreter-les-regles-de-secur
+            title: 4.2 Technologie – d’interpréter les règles de sécurité spécifiques aux salles d’eau ; de justifier les degrés de protection des appareils
+    extras:
+      - title: Dossier pédagogique – UE3
+        url: https://www.etudierenhainaut.be/images/editeurs/ipam/Électricité/DP_Installateur_Monteur_Electricité/215013U11D2_Installations_résidentielles_-_UE3.pdf
+        note: relays, contactors, fault finding
+      - title: Electrotoile – Électricité dans la maison
+        url: https://www.electrotoile.eu/habitat.php
+        note: interactive circuit diagrams · French rules
+      - title: Jérémy Lazzari | Apprendre l'électricité
+        url: https://www.youtube.com/@jeremy.lazzari
+        note: short beginner videos
+  - id: belgian-rules
+    title: Belgian rules and the inspection
+    summary: RGIE / AREI, schéma unifilaire, plan de position, what Vinçotte checks.
+    checkpoint: List the documents Vinçotte will ask for, and tell a major change from a minor one.
+    courses:
+      - id: spf-leaflet
+        title: Contrôle des installations électriques domestiques (dépliant)
+        url: https://economie.fgov.be/fr/file/178001/download?token=fq483TSN
+        publisher: SPF Economie
+        kind: pdf
+        note: official 4-page leaflet
+        summary: Official SPF Economie leaflet on when a domestic electrical inspection is mandatory at house sale, which documents to prepare, and what follows the inspection.
+        duration: 4 pages
+        parts:
+          - id: spf-leaflet-vendre-une-maison
+            title: Vendre une maison
+            url: https://economie.fgov.be/fr/file/178001/download?token=fq483TSN#page=2
+            note: p. 2 – installations avant / à partir du 1er octobre 1981
+          - id: spf-leaflet-controle
+            title: Contrôle
+            url: https://economie.fgov.be/fr/file/178001/download?token=fq483TSN#page=3
+            note: p. 3 – Organisme agréé, Préparation, Contrôle
+          - id: spf-leaflet-contacts-spf-economie
+            title: Contacts SPF Economie
+            url: https://economie.fgov.be/fr/file/178001/download?token=fq483TSN#page=4
+            note: p. 4 – back cover, contact details only
+            optional: true
+      - id: spf-page
+        title: Contrôle des installations électriques domestiques (page)
+        url: https://economie.fgov.be/fr/themes/energie/sources-et-vecteurs-denergie/electricite/securite-et-controle-des/controle-des-installations
+        publisher: SPF Economie
+        kind: web
+        note: major vs minor change
+        summary: SPF Economie topic page explaining when a domestic installation must be inspected, which documents (single-line diagram, position plan) to provide, and what happens after the inspection or after modifications.
+        duration: 1 web page
+        parts:
+          - id: spf-page-quand-devez-vous-proceder-a-un-controle-de-votre
+            title: Quand devez-vous procéder à un contrôle de votre installation électrique ?
+            url: https://economie.fgov.be/fr/themes/energie/sources-et-vecteurs-denergie/electricite/securite-et-controle-des/controle-des-installations
+          - id: spf-page-quels-documents-devez-vous-fournir-lors-du-contr
+            title: Quels documents devez-vous fournir lors du contrôle ?
+            url: https://economie.fgov.be/fr/themes/energie/sources-et-vecteurs-denergie/electricite/securite-et-controle-des/controle-des-installations
+            note: "h3: Le schéma unifilaire, Le plan de position"
+          - id: spf-page-que-se-passe-t-il-a-lissue-du-controle
+            title: Que se passe-t-il à l’issue du contrôle ?
+            url: https://economie.fgov.be/fr/themes/energie/sources-et-vecteurs-denergie/electricite/securite-et-controle-des/controle-des-installations
+          - id: spf-page-que-se-passe-t-il-en-cas-de-modification-ou-dext
+            title: Que se passe-t-il en cas de modification ou d’extension apportée à une installation électrique ?
+            url: https://economie.fgov.be/fr/themes/energie/sources-et-vecteurs-denergie/electricite/securite-et-controle-des/controle-des-installations
+          - id: spf-page-voir-aussi
+            title: Voir aussi
+            url: https://economie.fgov.be/fr/themes/energie/sources-et-vecteurs-denergie/electricite/securite-et-controle-des/controle-des-installations
+            note: "links: Publications, Réglementation, Autres pages"
+            optional: true
+      - id: certinergie-plans
+        title: Les plans et schémas pour le contrôle électrique RGIE
+        url: https://www.certinergie.be/fr/controle-electrique/guide/plans-et-schemas-electriques/
+        publisher: Certinergie
+        kind: web
+        note: what the two plans must contain
+        summary: "Certinergie guide to the single-line diagram and position plan required for an RGIE inspection: differences, how to obtain them, examples, standard symbols and rules for modifications."
+        duration: 1 web page
+        parts:
+          - id: certinergie-plans-schema-unifilaire-et-plan-de-position-quelle-dif
+            title: "Schéma unifilaire et plan de position : quelle différence ?"
+            url: https://www.certinergie.be/fr/controle-electrique/guide/plans-et-schemas-electriques/
+            note: "h3: Le schéma unifilaire, Le plan de position, Attention : documents obligatoires pour un rapport conforme"
+          - id: certinergie-plans-comment-obtenir-vos-schemas
+            title: Comment obtenir vos schémas
+            url: https://www.certinergie.be/fr/controle-electrique/guide/plans-et-schemas-electriques/
+            note: Votre électricien / Vous-même / Bureau d’études
+          - id: certinergie-plans-exemples-concrets-de-schemas
+            title: Exemples concrets de schémas
+            url: https://www.certinergie.be/fr/controle-electrique/guide/plans-et-schemas-electriques/
+            note: "h3: Schéma unifilaire, Plan de position, Synoptique du tableau"
+          - id: certinergie-plans-symboles-graphiques-normalises
+            title: Symboles graphiques normalisés
+            url: https://www.certinergie.be/fr/controle-electrique/guide/plans-et-schemas-electriques/
+          - id: certinergie-plans-modifications-et-extensions-de-linstallation
+            title: Modifications et extensions de l’installation
+            url: https://www.certinergie.be/fr/controle-electrique/guide/plans-et-schemas-electriques/
+            note: petites vs importantes modifications, mention "Partie ancienne"
+          - id: certinergie-plans-questions-frequentes-sur-les-schemas-electriques
+            title: Questions fréquentes sur les schémas électriques
+            url: https://www.certinergie.be/fr/controle-electrique/guide/plans-et-schemas-electriques/
+            optional: true
+      - id: abb-rgie
+        title: Guide ABB pour les installations domestiques suivant la RGIE
+        url: https://library.e.abb.com/public/0855402f044d459c8acf73a4a3e903a4/OFF_2309-26135_ABB_AREI-document_fr-web.pdf
+        publisher: ABB Belgium
+        kind: pdf
+        note: 20 illustrated pages
+        summary: "ABB guide to the 2023 RGIE changes for domestic installations: definition, new graphic symbols, example diagrams, shock and overcurrent protection, RCD selection and coordination tables, EV chargers and derogations for existing installations."
+        duration: 20 pages
+        parts:
+          - id: abb-rgie-definition-dune-installation-domestique
+            title: Définition d'une installation domestique
+            url: https://library.e.abb.com/public/0855402f044d459c8acf73a4a3e903a4/OFF_2309-26135_ABB_AREI-document_fr-web.pdf#page=4
+            note: p. 4
+          - id: abb-rgie-nouveaux-symboles-graphiques
+            title: Nouveaux symboles graphiques
+            url: https://library.e.abb.com/public/0855402f044d459c8acf73a4a3e903a4/OFF_2309-26135_ABB_AREI-document_fr-web.pdf#page=5
+            note: pp. 5–6
+          - id: abb-rgie-exemple-calendriers-et-plans
+            title: Exemple calendriers et plans
+            url: https://library.e.abb.com/public/0855402f044d459c8acf73a4a3e903a4/OFF_2309-26135_ABB_AREI-document_fr-web.pdf#page=7
+            note: pp. 7–8
+          - id: abb-rgie-protection-contre-les-chocs-electriques
+            title: Protection contre les chocs électriques
+            url: https://library.e.abb.com/public/0855402f044d459c8acf73a4a3e903a4/OFF_2309-26135_ABB_AREI-document_fr-web.pdf#page=9
+            note: pp. 9–10
+          - id: abb-rgie-protection-contre-les-surintensites
+            title: Protection contre les surintensités
+            url: https://library.e.abb.com/public/0855402f044d459c8acf73a4a3e903a4/OFF_2309-26135_ABB_AREI-document_fr-web.pdf#page=11
+            note: p. 11 – includes Voies d'écoulement mixtes
+          - id: abb-rgie-interrupteurs-differentiels
+            title: Interrupteurs différentiels
+            url: https://library.e.abb.com/public/0855402f044d459c8acf73a4a3e903a4/OFF_2309-26135_ABB_AREI-document_fr-web.pdf#page=12
+            note: pp. 12–16 – incl. coordination tables
+          - id: abb-rgie-multiple-bornes-de-charge
+            title: Multiple bornes de charge
+            url: https://library.e.abb.com/public/0855402f044d459c8acf73a4a3e903a4/OFF_2309-26135_ABB_AREI-document_fr-web.pdf#page=17
+            note: pp. 17–18 (TOC says 16)
+          - id: abb-rgie-dispositions-derogatoires
+            title: Dispositions dérogatoires
+            url: https://library.e.abb.com/public/0855402f044d459c8acf73a4a3e903a4/OFF_2309-26135_ABB_AREI-document_fr-web.pdf#page=19
+            note: p. 19 (TOC says 18); TOC entry 'Signalisation de la présence d’un circuit' (p. 19) has no matching body text
+      - id: certinergie-slides
+        title: Formation initiation RGIE – installateurs
+        url: https://academy.certinergie.be/wp-content/uploads/2024/07/Formation_initiation_RGIE-installateurs_juin_2024.pdf
+        publisher: Certinergie Academy
+        kind: pdf
+        note: 313 slides · chapter by chapter
+        summary: Certinergie Academy introductory RGIE course for installers walking through Livre 1 parts 1–8 (definitions, characteristics, protection measures, equipment, bathrooms, derogations) plus PV and EV charging.
+        duration: 313 slides
+        parts:
+          - id: certinergie-slides-introduction-au-rgie
+            title: Introduction au RGIE
+            url: https://academy.certinergie.be/wp-content/uploads/2024/07/Formation_initiation_RGIE-installateurs_juin_2024.pdf#page=1
+            note: "slides 1–15 – AR 5 mars 2023, ancien vs nouveau RGIE, puis Partie 1 : Domaine d’application du RGIE (13–15)"
+          - id: certinergie-slides-partie-2-termes-et-definitions
+            title: "Partie 2 : Termes et définitions"
+            url: https://academy.certinergie.be/wp-content/uploads/2024/07/Formation_initiation_RGIE-installateurs_juin_2024.pdf#page=16
+            note: slides 16–33 – termes généraux, schémas de mise à la terre, domaines de tension
+          - id: certinergie-slides-partie-2-4-protection-contre-les-chocs-electriqu
+            title: Partie 2.4. Protection contre les chocs électriques
+            url: https://academy.certinergie.be/wp-content/uploads/2024/07/Formation_initiation_RGIE-installateurs_juin_2024.pdf#page=34
+            note: slides 34–53 – chapitres 2.4 à 2.13 (mise à la terre, circuits, canalisations, schémas et plans, symboles)
+          - id: certinergie-slides-partie-3-determination-des-caracteristiques-gene
+            title: "Partie 3 : Détermination des caractéristiques générales des installations électriques"
+            url: https://academy.certinergie.be/wp-content/uploads/2024/07/Formation_initiation_RGIE-installateurs_juin_2024.pdf#page=54
+            note: slides 54–65
+          - id: certinergie-slides-partie-4-mesures-de-protection
+            title: "Partie 4: Mesures de protection"
+            url: https://academy.certinergie.be/wp-content/uploads/2024/07/Formation_initiation_RGIE-installateurs_juin_2024.pdf#page=66
+            note: slides 66–104 – chapitres 4.1, 4.2 Protection contre les chocs électriques
+          - id: certinergie-slides-chapitre-4-3-protection-contre-les-effets-thermi
+            title: Chapitre 4.3. Protection contre les effets thermiques
+            url: https://academy.certinergie.be/wp-content/uploads/2024/07/Formation_initiation_RGIE-installateurs_juin_2024.pdf#page=105
+            note: slides 105–118
+          - id: certinergie-slides-chapitre-4-4-protection-electrique-contre-les-su
+            title: Chapitre 4.4. Protection électrique contre les surintensités.
+            url: https://academy.certinergie.be/wp-content/uploads/2024/07/Formation_initiation_RGIE-installateurs_juin_2024.pdf#page=119
+            note: slides 119–135
+          - id: certinergie-slides-chapitre-2-10-influences-externes
+            title: Chapitre 2.10. Influences externes
+            url: https://academy.certinergie.be/wp-content/uploads/2024/07/Formation_initiation_RGIE-installateurs_juin_2024.pdf#page=136
+            note: slides 136–143
+          - id: certinergie-slides-partie-5-choix-et-mise-en-uvre-du-materiel
+            title: Partie 5 – Choix et mise en œuvre du matériel
+            url: https://academy.certinergie.be/wp-content/uploads/2024/07/Formation_initiation_RGIE-installateurs_juin_2024.pdf#page=144
+            note: slides 144–175 – chapitres 5.1 et 5.2 (canalisations)
+          - id: certinergie-slides-chapitre-5-3-appareillage-electrique-protection
+            title: Chapitre 5.3. Appareillage électrique (protection, commande, sectionnement et surveillance)
+            url: https://academy.certinergie.be/wp-content/uploads/2024/07/Formation_initiation_RGIE-installateurs_juin_2024.pdf#page=176
+            note: slides 176–196 – jusqu'à 5.3.5.2
+          - id: certinergie-slides-5-3-5-3-dispositifs-de-protection-a-courant-diff
+            title: 5.3.5.3. Dispositifs de protection à courant différentiel résiduel (DPCDR)
+            url: https://academy.certinergie.be/wp-content/uploads/2024/07/Formation_initiation_RGIE-installateurs_juin_2024.pdf#page=197
+            note: slides 197–225 – 5.3.5.3 à 5.3.5.5
+          - id: certinergie-slides-chapitre-5-4-mises-a-la-terre-conducteurs-de-pro
+            title: Chapitre 5.4. Mises à la terre, conducteurs de protection et liaisons équipotentielles
+            url: https://academy.certinergie.be/wp-content/uploads/2024/07/Formation_initiation_RGIE-installateurs_juin_2024.pdf#page=226
+            note: slides 226–247
+          - id: certinergie-slides-chapitre-7-1-volumes-salle-de-bain
+            title: "Chapitre 7.1 : Volumes salle de bain"
+            url: https://academy.certinergie.be/wp-content/uploads/2024/07/Formation_initiation_RGIE-installateurs_juin_2024.pdf#page=248
+            note: slides 248–266
+          - id: certinergie-slides-chapitre-6-et-8-derogations
+            title: "Chapitre 6 et 8 : Dérogations"
+            url: https://academy.certinergie.be/wp-content/uploads/2024/07/Formation_initiation_RGIE-installateurs_juin_2024.pdf#page=267
+            note: slides 267–296 – 6.5.8 et 8.2
+          - id: certinergie-slides-chapitre-7-pv-et-bornes-de-recharges
+            title: "Chapitre 7 : PV et bornes de recharges"
+            url: https://academy.certinergie.be/wp-content/uploads/2024/07/Formation_initiation_RGIE-installateurs_juin_2024.pdf#page=297
+            note: slides 297–313
+    extras:
+      - title: Contrôler la résistance d'isolement
+        url: https://www.electrotoile.eu/comment-realiser-la-mesure-d-isolement-avec-un-controleur-d-installation.php
+        note: the insulation test · French thresholds
+      - title: Trikker
+        url: https://www.trikker.be/fr
+        note: the drawing software Belgian schools use · paid
+      - title: HELHa – fiche ECTS installation domestique
+        url: https://www.helha.be/ects/TE/B17/125_17_TEBE1B23BE.pdf
+        note: names the paid Belgian RGIE textbooks
+  - id: control-and-phc
+    title: Push buttons, relays and PHC
+    summary: Control vs power, extra-low voltage, the bus, the modules in the cabinet.
+    checkpoint: "Identify each module in the cabinet from its label: STM, 24 V or 230 V inputs, outputs."
+    courses:
+      - id: telerupteur
+        title: Télérupteur
+        url: https://fr.wikipedia.org/wiki/Télérupteur
+        publisher: Wikipédia
+        kind: web
+        note: control side vs power side
+        summary: "French Wikipedia article on the impulse relay (télérupteur): how it is wired and how the electromechanical version works."
+        duration: short article, 2 content sections
+        parts:
+          - id: telerupteur-mise-en-uvre
+            title: Mise en œuvre
+            url: https://fr.wikipedia.org/wiki/T%C3%A9l%C3%A9rupteur#Mise_en_%C5%93uvre
+          - id: telerupteur-fonctionnement-du-telerupteur-electromecanique
+            title: Fonctionnement du télérupteur électromécanique
+            url: https://fr.wikipedia.org/wiki/T%C3%A9l%C3%A9rupteur#Fonctionnement_du_t%C3%A9l%C3%A9rupteur_%C3%A9lectrom%C3%A9canique
+      - id: tbts
+        title: "TBTS : qu'est-ce que c'est ?"
+        url: https://www.futura-sciences.com/maison/definitions/maison-tbts-10929/
+        publisher: Futura Sciences
+        kind: web
+        note: 24 V push-button lines
+        summary: "Short Futura Sciences definition of TBTS (very low safety voltage): safety rules, practical uses, benefits and evolving standards."
+        duration: 3 min read
+        parts:
+          - id: tbts-les-regles-de-securite-des-tbts
+            title: Les règles de sécurité des TBTS
+            url: https://www.futura-sciences.com/maison/definitions/maison-tbts-10929/
+          - id: tbts-applications-pratiques-de-la-tbts-dans-divers-en
+            title: Applications pratiques de la TBTS dans divers environnements
+            url: https://www.futura-sciences.com/maison/definitions/maison-tbts-10929/
+            note: "includes h3: Avantages de la TBTS pour la sécurité domestique"
+          - id: tbts-conception-et-maintenance-des-systemes-tbts
+            title: Conception et maintenance des systèmes TBTS
+            url: https://www.futura-sciences.com/maison/definitions/maison-tbts-10929/
+            note: "includes h3: Innovations et évolutions des normes TBTS"
+      - id: uga-knx
+        title: Cours domotique (KNX pour le projet)
+        url: https://chamilo.univ-grenoble-alpes.fr/courses/UGA030053/document/Ressource-etudiant/Cours-domotique.pdf
+        publisher: Université Grenoble Alpes
+        kind: pdf
+        note: same design as PHC
+        summary: UGA slide deck introducing home automation goals, radio vs wired tech, then KNX topology, physical/group addresses, communication objects and a programming example.
+        duration: 54 slides
+        parts:
+          - id: uga-knx-objectifs-de-la-domotique
+            title: Objectifs de la domotique
+            url: https://chamilo.univ-grenoble-alpes.fr/courses/UGA030053/document/Ressource-etudiant/Cours-domotique.pdf#page=2
+            note: pp. 2-6
+          - id: uga-knx-deux-grandes-familles-en-domotique-radio-et-fila
+            title: "Deux grandes familles en domotique : radio et filaire"
+            url: https://chamilo.univ-grenoble-alpes.fr/courses/UGA030053/document/Ressource-etudiant/Cours-domotique.pdf#page=7
+            note: pp. 7-11
+          - id: uga-knx-actionneur-de-commutation-tor-partie-puissance-p
+            title: "Actionneur de commutation TOR : partie puissance / partie commande"
+            url: https://chamilo.univ-grenoble-alpes.fr/courses/UGA030053/document/Ressource-etudiant/Cours-domotique.pdf#page=12
+            note: pp. 12-20
+          - id: uga-knx-les-schemas-domotiques
+            title: Les schémas domotiques
+            url: https://chamilo.univ-grenoble-alpes.fr/courses/UGA030053/document/Ressource-etudiant/Cours-domotique.pdf#page=21
+            note: pp. 21-23
+          - id: uga-knx-notion-de-programmation-les-participants
+            title: "Notion de programmation : les participants"
+            url: https://chamilo.univ-grenoble-alpes.fr/courses/UGA030053/document/Ressource-etudiant/Cours-domotique.pdf#page=24
+            note: pp. 24-25
+          - id: uga-knx-i-topologie-domotique-knx
+            title: I. Topologie domotique KNX
+            url: https://chamilo.univ-grenoble-alpes.fr/courses/UGA030053/document/Ressource-etudiant/Cours-domotique.pdf#page=26
+            note: pp. 26-33
+          - id: uga-knx-ii-le-concept-de-programmation-en-domotique
+            title: II. Le concept de programmation en domotique
+            url: https://chamilo.univ-grenoble-alpes.fr/courses/UGA030053/document/Ressource-etudiant/Cours-domotique.pdf#page=34
+            note: pp. 34-46
+          - id: uga-knx-iii-les-objets-de-communication-adresses-de-grou
+            title: III. Les objets de communication – adresses de groupe
+            url: https://chamilo.univ-grenoble-alpes.fr/courses/UGA030053/document/Ressource-etudiant/Cours-domotique.pdf#page=47
+            note: pp. 47-49
+          - id: uga-knx-iv-exemple-de-programmation-domotique
+            title: IV. Exemple de programmation domotique
+            url: https://chamilo.univ-grenoble-alpes.fr/courses/UGA030053/document/Ressource-etudiant/Cours-domotique.pdf#page=50
+            note: pp. 50-51
+          - id: uga-knx-iv-prise-en-main-du-logiciel-knx-e-campus-et-exp
+            title: IV. Prise en main du logiciel KNX (e-campus) et explication du projet
+            url: https://chamilo.univ-grenoble-alpes.fr/courses/UGA030053/document/Ressource-etudiant/Cours-domotique.pdf#page=52
+            note: pp. 52-54
+      - id: fwb-domotique
+        title: Dossier pédagogique – Initiation à la domotique
+        url: https://www.etudierenhainaut.be/images/editeurs/ipam/Électricité/DP_Installateur_Monteur_Electricité/215014U11D2_Initiation_à_la_domotique.pdf
+        publisher: FWB promotion sociale
+        kind: pdf
+        note: syllabus
+        summary: "FWB pedagogical file for the 80-period unit 'Initiation à la domotique': prerequisites, learning outcomes and programme content."
+        duration: 4 pages, 80 periods
+        parts:
+          - id: fwb-domotique-de-sinitier-au-principe-dune-installation-domoti
+            title: de s'initier au principe d'une installation domotisée à partir de quelques exemples concrets
+            note: Programme
+          - id: fwb-domotique-danalyser-le-fonctionnement-des-principaux-capte
+            title: d'analyser le fonctionnement des principaux capteurs et la fonction des éléments de commande utilisés dans une installation domotisée
+            note: Programme
+          - id: fwb-domotique-didentifier-et-determiner-le-role-des-composants
+            title: d'identifier et déterminer le rôle des composants et des équipements de domotique rencontrés dans le bâtiment
+            note: Programme
+          - id: fwb-domotique-de-realiser-les-differents-schemas-des-installat
+            title: de réaliser les différents schémas des installations domotisées (ensembles et sous-ensembles) des équipements d'une maison unifamiliale
+            note: Programme
+          - id: fwb-domotique-de-respecter-les-symboles-et-unites-normalises
+            title: de respecter les symboles et unités normalisés
+            note: Programme
+          - id: fwb-domotique-de-realiser-le-montage-dinstallations-domotisees
+            title: de réaliser le montage d'installations domotisées suivant un plan préétabli
+            note: Programme
+          - id: fwb-domotique-de-participer-a-la-programmation-dinstallations
+            title: de participer à la programmation d'installations domotisées simples (un ou plusieurs points lumineux, modification de points de commande)
+            note: Programme
+          - id: fwb-domotique-de-cabler-des-elements-pour-la-gestion-dacces-de
+            title: de câbler des éléments pour la gestion d'accès, de surveillance des personnes et des biens pour assurer le confort thermique, visuel, acoustique et la qualité de l'air
+            note: Programme
+          - id: fwb-domotique-acquis-dapprentissage-identifier-les-composants
+            title: "Acquis d'apprentissage : identifier les composants, justifier le choix du matériel selon la tension d'alimentation, expliquer le fonctionnement, proposer des modifications"
+            note: Section 3 – success threshold
+      - id: peha-stm
+        title: PEHA 942 STM AN – central module
+        url: https://www.manualslib.com/manual/1671025/Peha-942-Stm-An.html
+        publisher: ManualsLib
+        kind: manual
+        note: French on pp. 7–8
+        summary: "PEHA PHC 942 STM AN central module manual: safety, power supply, internal module bus and external RS485 bus wiring, programming and module addressing."
+        duration: 8 pages (DE p1, EN p3, NL p5, FR p7)
+        parts:
+          - id: peha-stm-installation
+            title: Installation
+            url: https://www.manualslib.com/manual/1671025/Peha-942-Stm-An.html?page=3#manual
+            note: EN p. 3
+          - id: peha-stm-structure-and-description
+            title: Structure and Description
+            url: https://www.manualslib.com/manual/1671025/Peha-942-Stm-An.html?page=3#manual
+            note: EN p. 3
+          - id: peha-stm-safety
+            title: Safety
+            url: https://www.manualslib.com/manual/1671025/Peha-942-Stm-An.html?page=3#manual
+            note: EN p. 3
+          - id: peha-stm-important-installation-information
+            title: Important Installation Information
+            url: https://www.manualslib.com/manual/1671025/Peha-942-Stm-An.html?page=3#manual
+            note: EN p. 3
+          - id: peha-stm-technical-information
+            title: Technical Information
+            url: https://www.manualslib.com/manual/1671025/Peha-942-Stm-An.html?page=3#manual
+            note: EN p. 3
+          - id: peha-stm-power-supply
+            title: Power Supply
+            url: https://www.manualslib.com/manual/1671025/Peha-942-Stm-An.html?page=3#manual
+            note: EN p. 3
+          - id: peha-stm-phc-programming
+            title: Phc Programming
+            url: https://www.manualslib.com/manual/1671025/Peha-942-Stm-An.html?page=3#manual
+            note: EN p. 3
+          - id: peha-stm-connection-of-internal-phc-bus-module-bus
+            title: Connection of Internal Phc Bus (Module Bus)
+            url: https://www.manualslib.com/manual/1671025/Peha-942-Stm-An.html?page=3#manual
+            note: EN p. 3
+          - id: peha-stm-connection-of-the-external-phc-bus-rs485
+            title: Connection of the External Phc Bus (RS485)
+            url: https://www.manualslib.com/manual/1671025/Peha-942-Stm-An.html?page=3#manual
+            note: EN p. 3
+          - id: peha-stm-settings-menu-stm-phc-menu-coding-module-address
+            title: Settings Menu STM (PHC Menu) / Coding (Module Address)
+            url: https://www.manualslib.com/manual/1671025/Peha-942-Stm-An.html?page=3#manual
+            note: EN p. 3
+          - id: peha-stm-module-address
+            title: Module Address
+            url: https://www.manualslib.com/manual/1671025/Peha-942-Stm-An.html?page=4#manual
+            note: EN p. 4
+          - id: peha-stm-afvoer-van-het-apparaat
+            title: Afvoer Van Het Apparaat
+            url: https://www.manualslib.com/manual/1671025/Peha-942-Stm-An.html?page=6#manual
+            note: NL p. 6, disposal
+            optional: true
+          - id: peha-stm-elimination-de-lappareil
+            title: Élimination de L'appareil
+            url: https://www.manualslib.com/manual/1671025/Peha-942-Stm-An.html?page=8#manual
+            note: FR p. 8, disposal
+            optional: true
+      - id: peha-em24
+        title: PEHA PHC 940/24 EM – 16 inputs, 24 V
+        url: https://www.manualslib.com/manual/1961781/Peha-Phc-940-24-Em.html
+        publisher: ManualsLib
+        kind: manual
+        note: DE / EN / NL
+        summary: "PEHA PHC 940/24 EM 16-input 24 V module sheet: description, connection diagram, coding switch, consumption and technical data."
+        duration: 3 pages (DE p1, EN p2, NL p3)
+        parts:
+          - id: peha-em24-coding-switch
+            title: Coding Switch
+            url: https://www.manualslib.com/manual/1961781/Peha-Phc-940-24-Em.html?page=2#manual
+            note: EN p. 2
+          - id: peha-em24-current-consumption
+            title: Current Consumption
+            url: https://www.manualslib.com/manual/1961781/Peha-Phc-940-24-Em.html?page=2#manual
+            note: EN p. 2
+          - id: peha-em24-technical-data
+            title: Technical Data
+            url: https://www.manualslib.com/manual/1961781/Peha-Phc-940-24-Em.html?page=2#manual
+            note: EN p. 2
+          - id: peha-em24-connection-possibilities
+            title: Connection Possibilities
+            url: https://www.manualslib.com/manual/1961781/Peha-Phc-940-24-Em.html?page=2#manual
+            note: EN p. 2
+          - id: peha-em24-coding
+            title: Coding
+            url: https://www.manualslib.com/manual/1961781/Peha-Phc-940-24-Em.html?page=2#manual
+            note: EN p. 2
+          - id: peha-em24-ambient-temperature
+            title: Ambient Temperature
+            url: https://www.manualslib.com/manual/1961781/Peha-Phc-940-24-Em.html?page=2#manual
+            note: EN p. 2
+          - id: peha-em24-screw-terminals
+            title: Screw Terminals
+            url: https://www.manualslib.com/manual/1961781/Peha-Phc-940-24-Em.html?page=2#manual
+            note: EN p. 2
+          - id: peha-em24-dimensions
+            title: Dimensions
+            url: https://www.manualslib.com/manual/1961781/Peha-Phc-940-24-Em.html?page=2#manual
+            note: EN p. 2
+          - id: peha-em24-description
+            title: Description
+            url: https://www.manualslib.com/manual/1961781/Peha-Phc-940-24-Em.html?page=2#manual
+            note: EN p. 2
+          - id: peha-em24-connection-diagram
+            title: Connection Diagram
+            url: https://www.manualslib.com/manual/1961781/Peha-Phc-940-24-Em.html?page=2#manual
+            note: EN p. 2
+      - id: peha-em230
+        title: PEHA PHC 940/230 EM – 8 inputs, 230 V
+        url: https://www.manualslib.de/manual/987019/Peha-Phc-940-230-Em.html
+        publisher: ManualsLib
+        kind: manual
+        note: compare with the 24 V one
+        summary: "PEHA PHC 940/230 EM 8-input 230 V module sheet: description, wiring, mounting, data link, coding switch and technical data."
+        duration: 3 pages (DE p1, EN p2, NL p3)
+        parts:
+          - id: peha-em230-beschreibung
+            title: Beschreibung
+            url: https://www.manualslib.de/manual/987019/Peha-Phc-940-230-Em.html#manual
+            note: DE p. 1 (EN equivalent on p. 2)
+          - id: peha-em230-anschlussbild
+            title: Anschlussbild
+            url: https://www.manualslib.de/manual/987019/Peha-Phc-940-230-Em.html#manual
+            note: DE p. 1 (EN equivalent on p. 2)
+          - id: peha-em230-montage
+            title: Montage
+            url: https://www.manualslib.de/manual/987019/Peha-Phc-940-230-Em.html#manual
+            note: DE p. 1 (EN equivalent on p. 2)
+          - id: peha-em230-anschluss-datenverbindung
+            title: Anschluss Datenverbindung
+            url: https://www.manualslib.de/manual/987019/Peha-Phc-940-230-Em.html#manual
+            note: DE p. 1 (EN equivalent on p. 2)
+          - id: peha-em230-kodierschalter
+            title: Kodierschalter
+            url: https://www.manualslib.de/manual/987019/Peha-Phc-940-230-Em.html#manual
+            note: DE p. 1 (EN equivalent on p. 2)
+          - id: peha-em230-stromverbrauch
+            title: Stromverbrauch
+            url: https://www.manualslib.de/manual/987019/Peha-Phc-940-230-Em.html#manual
+            note: DE p. 1 (EN equivalent on p. 2)
+          - id: peha-em230-technische-daten
+            title: Technische Daten
+            url: https://www.manualslib.de/manual/987019/Peha-Phc-940-230-Em.html#manual
+            note: DE p. 1 (EN equivalent on p. 2)
+          - id: peha-em230-gewahrleistung
+            title: Gewährleistung
+            url: https://www.manualslib.de/manual/987019/Peha-Phc-940-230-Em.html#manual
+            note: DE p. 1 (EN equivalent on p. 2)
+      - id: openhab-phc
+        title: openHAB PHC Binding
+        url: https://www.openhab.org/addons/bindings/phc/
+        publisher: openHAB
+        kind: web
+        note: English · clearest module overview
+        summary: "openHAB PHC binding docs: RS485 serial connection, bridge configuration, supported things, thing parameters, channels and a full example."
+        duration: ~1000 words
+        parts:
+          - id: openhab-phc-serial-communication
+            title: Serial Communication
+            url: https://www.openhab.org/addons/bindings/phc/#serial-communication
+            note: "includes h3: Connection"
+          - id: openhab-phc-bridge
+            title: Bridge
+            url: https://www.openhab.org/addons/bindings/phc/#bridge
+            note: "includes h3: Configurations"
+          - id: openhab-phc-supported-things
+            title: Supported Things
+            url: https://www.openhab.org/addons/bindings/phc/#supported-things
+          - id: openhab-phc-discovery
+            title: Discovery
+            url: https://www.openhab.org/addons/bindings/phc/#discovery
+          - id: openhab-phc-thing-configuration
+            title: Thing Configuration
+            url: https://www.openhab.org/addons/bindings/phc/#thing-configuration
+            note: "includes h3: Parameters"
+          - id: openhab-phc-channels
+            title: Channels
+            url: https://www.openhab.org/addons/bindings/phc/#channels
+          - id: openhab-phc-full-example
+            title: Full Example
+            url: https://www.openhab.org/addons/bindings/phc/#full-example
+    extras:
+      - title: KNX pour un éclairage intelligent… mais pas que
+        url: https://www.lightzoomlumiere.fr/article/knx-pour-un-eclairage-intelligent-mais-pas-que/
+        note: for the keep-or-replace question
+      - title: Schéma unifilaire domotique suivant RGIE 2025
+        url: https://www.bricozone.be/t/schema-unifilaire-domotique-suivant-rgie-2025.157349/
+        note: Bricozone thread · unchecked answers
+      - title: Conformité domotique « home made »
+        url: https://www.bricozone.be/t/conformite-domotique-home-made.140382/
+        note: Bricozone thread · forum opinion
+      - title: Quel type d'interrupteur utiliser avec un télérupteur ?
+        url: https://www.legrand.fr/questions-frequentes/quel-type-dinterrupteur-utiliser-avec-un-telerupteur
+        note: Legrand · push button + relay pattern
+  - id: map-the-house
+    title: Map the house
+    summary: The start of the schéma unifilaire and the plan de position the inspection needs.
+    checkpoint: Every push button and every light in the house is on the list.
+    courses:
+      - id: map-buttons
+        title: Which button turns on which light – room by room
+        publisher: your own list
+        kind: task
+        note: from the first Post
+      - id: draft-unifilaire
+        title: First sketch of the schéma unifilaire
+        publisher: see the Certinergie guide in C3
+        kind: task
+      - id: draft-position
+        title: First sketch of the plan de position
+        publisher: see the ABB guide in C3
+        kind: task
+references:
+  - title: RGIE / AREI – Livres 1, 2 et 3
+    url: https://economie.fgov.be/fr/publications/reglement-general-sur-les
+    note: the legal text · look things up in Livre 1
+  - title: Notes, fiches thématiques et FAQ – DG Energie
+    url: https://economie.fgov.be/fr/publications/notes-fiches-thematiques-et
+    note: "fiche 010: documents · fiche 020: major change"
+  - title: Sitelec.org – index des cours
+    url: https://www.sitelec.org/cours.htm
+    note: A–Z lookup
+  - title: Cahier Technique n° 172 – liaisons à la terre
+    url: https://www.se.com/fr/fr/download/document/CT172/
+    note: Schneider · open in a browser
+  - title: PEHA manuals index
+    url: https://www.manualslib.com/brand/peha/
+    note: one sheet per module label
+  - title: BricoZone – Électricité générale
+    url: https://www.bricozone.be/forum/electricite-generale.16/
+    note: Belgian forum
+  - title: BricoZone – Domotique
+    url: https://www.bricozone.be/forum/domotique.21/
+    note: ask about PHC here
+  - title: FAB ELEC
+    url: https://www.youtube.com/@fabelec9124
+    note: a Belgian electrician answers questions
