@@ -1,26 +1,34 @@
-// The light/dark choice is a `theme` cookie on .mehmetcinar.com, shared with the Site and every
-// other app on a subdomain. The inline script in index.html applies it before the first paint.
-export type Theme = "light" | "dark";
+// The reader's light/dark choice is a `theme` cookie on .mehmetcinar.com, shared with the Site
+// and every other app on a subdomain (ADR 0002 in the Site repo). No cookie means "system".
+// The inline script in index.html applies it before the first paint.
+export type ThemeChoice = "light" | "system" | "dark";
 
-export function currentTheme(): Theme {
-	return document.documentElement.classList.contains("dark") ? "dark" : "light";
+const system = () => window.matchMedia("(prefers-color-scheme: dark)");
+
+export function readChoice(): ThemeChoice {
+	const value = document.cookie.match(/(?:^|; )theme=(light|dark|system)/)?.[1];
+	return (value as ThemeChoice | undefined) ?? "system";
 }
 
-export function setTheme(theme: Theme) {
+export function applyChoice(choice: ThemeChoice) {
+	const dark = choice === "dark" || (choice === "system" && system().matches);
 	const root = document.documentElement;
-	root.classList.toggle("dark", theme === "dark");
-	root.dataset.theme = theme;
-	const domain = location.hostname.endsWith("mehmetcinar.com") ? "; Domain=mehmetcinar.com" : "";
-	document.cookie = `theme=${theme}; Path=/; Max-Age=31536000; SameSite=Lax; Secure${domain}`;
+	root.classList.toggle("dark", dark);
+	root.dataset.theme = dark ? "dark" : "light";
 }
 
-// Like the Site: a change of the system setting becomes the new choice.
-export function followSystemChanges(onChange: (theme: Theme) => void) {
-	const query = window.matchMedia("(prefers-color-scheme: dark)");
-	const listener = ({ matches }: MediaQueryListEvent) => {
-		const theme = matches ? "dark" : "light";
-		setTheme(theme);
-		onChange(theme);
+// Written only when the reader picks an option.
+export function setChoice(choice: ThemeChoice) {
+	const domain = location.hostname.endsWith("mehmetcinar.com") ? "; Domain=mehmetcinar.com" : "";
+	document.cookie = `theme=${choice}; Path=/; Max-Age=31536000; SameSite=Lax; Secure${domain}`;
+	applyChoice(choice);
+}
+
+// While the choice is "system", follow the OS setting live; nothing is written.
+export function watchSystem(getChoice: () => ThemeChoice) {
+	const query = system();
+	const listener = () => {
+		if (getChoice() === "system") applyChoice("system");
 	};
 	query.addEventListener("change", listener);
 	return () => query.removeEventListener("change", listener);

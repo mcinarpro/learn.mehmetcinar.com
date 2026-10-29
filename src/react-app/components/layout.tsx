@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { ThemeToggle } from "@/components/theme-toggle";
+import { ThemeSwitcher } from "@/components/theme-switcher";
 
 // Wider than the Site's 768px column: the app has a side column and full-width lists,
 // while running text stays at max-w-prose (ADR 0002 in the Site repo).
@@ -55,7 +55,6 @@ export function Layout({
 					</nav>
 					<div className="flex shrink-0 items-center gap-3">
 						{editing && <span className="text-sm text-muted-foreground">Editing</span>}
-						<ThemeToggle />
 					</div>
 				</div>
 			</header>
@@ -71,9 +70,12 @@ export function Layout({
 							Source
 						</a>
 					</span>
-					<button type="button" className="underline underline-offset-4 hover:text-primary" onClick={onEdit}>
-						{editing ? "Stop editing" : "Edit"}
-					</button>
+					<div className="flex items-center gap-4">
+						<button type="button" className="underline underline-offset-4 hover:text-primary" onClick={onEdit}>
+							{editing ? "Stop editing" : "Edit"}
+						</button>
+						<ThemeSwitcher />
+					</div>
 				</div>
 			</footer>
 		</div>

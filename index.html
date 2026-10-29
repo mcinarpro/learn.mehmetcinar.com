@@ -12,8 +12,9 @@
 		<script>
 			// Shared light/dark choice (cookie on .mehmetcinar.com), else the system setting.
 			(function () {
-				var cookie = document.cookie.match(/(?:^|; )theme=(light|dark)/);
-				var dark = cookie ? cookie[1] === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+				var cookie = document.cookie.match(/(?:^|; )theme=(light|dark|system)/);
+				var choice = cookie ? cookie[1] : "system";
+				var dark = choice === "dark" || (choice === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
 				document.documentElement.classList.toggle("dark", dark);
 				document.documentElement.dataset.theme = dark ? "dark" : "light";
 			})();
