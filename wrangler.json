@@ -1,15 +1,18 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "vite-react-template",
+	"name": "learn-mehmetcinar-com",
 	"main": "./src/worker/index.ts",
-	"compatibility_date": "2025-10-08",
+	"compatibility_date": "2026-10-27",
 	"compatibility_flags": ["nodejs_compat"],
 	"observability": {
 		"enabled": true
 	},
 	"upload_source_maps": true,
+	"routes": [{ "pattern": "learn.mehmetcinar.com", "custom_domain": true }],
+	"kv_namespaces": [{ "binding": "PROGRESS", "id": "2e01dcdacd0b4bff96d4100011489095" }],
 	"assets": {
 		"directory": "./dist/client",
-		"not_found_handling": "single-page-application"
+		"not_found_handling": "single-page-application",
+		"run_worker_first": ["/api/*"]
 	}
 }
