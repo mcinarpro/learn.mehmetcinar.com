@@ -1,4 +1,4 @@
-import { ExternalLinkIcon } from "lucide-react";
+import { ChevronLeftIcon, ChevronRightIcon, ExternalLinkIcon } from "lucide-react";
 import { partIds, type Progress } from "../../content/progress";
 import type { Course } from "../../content/schema";
 import { Badge } from "@/components/ui/badge";
@@ -18,15 +18,21 @@ import { courseStats } from "@/lib/stats";
 
 export function CourseDialog({
 	course,
+	previous,
+	next,
 	progress,
 	editing,
+	onNavigate,
 	onClose,
 	onTogglePart,
 	onSetParts,
 }: {
 	course: Course | null;
+	previous: Course | null;
+	next: Course | null;
 	progress: Progress;
 	editing: boolean;
+	onNavigate: (course: Course) => void;
 	onClose: () => void;
 	onTogglePart: (id: string) => void;
 	onSetParts: (ids: string[], done: boolean) => void;
@@ -37,16 +43,24 @@ export function CourseDialog({
 
 	return (
 		<Dialog open onOpenChange={(open) => !open && onClose()}>
-			<DialogContent className="grid max-h-[85svh] grid-rows-[auto_auto_minmax(0,1fr)_auto] gap-4 sm:max-w-xl">
+			<DialogContent
+				// Full screen on phones, a centred dialog from `sm` up.
+				className="grid h-svh max-h-svh max-w-none grid-cols-[minmax(0,1fr)] grid-rows-[auto_auto_minmax(0,1fr)_auto] gap-4 rounded-none sm:h-auto sm:max-h-[85svh] sm:max-w-xl sm:rounded-xl"
+				onKeyDown={(e) => {
+					if (e.target instanceof HTMLInputElement) return;
+					if (e.key === "ArrowLeft" && previous) onNavigate(previous);
+					if (e.key === "ArrowRight" && next) onNavigate(next);
+				}}
+			>
 				<DialogHeader>
-					<DialogTitle dir="auto" className="pr-6 text-balance">
+					<DialogTitle dir="auto" className="pr-6 text-lg leading-snug text-balance">
 						{course.title}
 					</DialogTitle>
-					<DialogDescription>{course.summary ?? course.publisher}</DialogDescription>
-					<p className="flex flex-wrap gap-x-3 gap-y-1 text-sm text-muted-foreground">
-						{[course.publisher, course.duration, course.note].filter(Boolean).map((fact) => (
-							<span key={fact}>{fact}</span>
-						))}
+					<DialogDescription className="line-clamp-2 sm:line-clamp-none">
+						{course.summary ?? course.publisher}
+					</DialogDescription>
+					<p className="text-sm text-muted-foreground">
+						{[course.publisher, course.duration, course.note].filter(Boolean).join(" · ")}
 					</p>
 				</DialogHeader>
 
@@ -120,6 +134,28 @@ export function CourseDialog({
 								{stats.complete ? "Mark as not done" : course.parts.length ? "Mark all done" : "Mark as done"}
 							</Button>
 						</div>
+					)}
+					{(previous || next) && (
+						<nav className="flex w-full justify-between gap-2 border-t pt-3" aria-label="Other courses">
+							{previous ? (
+								<Button variant="ghost" className="min-w-0 max-w-[48%] justify-start" onClick={() => onNavigate(previous)}>
+									<ChevronLeftIcon />
+									<span dir="auto" className="truncate">
+										{previous.title}
+									</span>
+								</Button>
+							) : (
+								<span />
+							)}
+							{next && (
+								<Button variant="ghost" className="min-w-0 max-w-[48%] justify-end" onClick={() => onNavigate(next)}>
+									<span dir="auto" className="truncate">
+										{next.title}
+									</span>
+									<ChevronRightIcon />
+								</Button>
+							)}
+						</nav>
 					)}
 				</DialogFooter>
 			</DialogContent>

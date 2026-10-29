@@ -1,12 +1,11 @@
-import { useState } from "react";
 import { ChevronRightIcon } from "lucide-react";
-import type { Course, LearningPath } from "../../content/schema";
-import { Badge } from "@/components/ui/badge";
+import type { LearningPath } from "../../content/schema";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Progress as Bar } from "@/components/ui/progress";
 import { CourseDialog } from "@/components/course-dialog";
 import { DoneMark } from "@/components/done-mark";
 import { useProgress, type SaveStatus } from "@/lib/progress";
+import { useOpenCourse } from "@/lib/use-open-course";
 import { courseStats, nextUp, pathStats, stageStats } from "@/lib/stats";
 
 const STATUS_TEXT: Record<SaveStatus, string> = {
@@ -27,7 +26,7 @@ export function PathPage({
 	onRefused: () => void;
 }) {
 	const { progress, status, togglePart, setParts, toggleCheckpoint } = useProgress(path.slug, token, onRefused);
-	const [openCourse, setOpenCourse] = useState<Course | null>(null);
+	const dialog = useOpenCourse(path.stages.flatMap((s) => s.courses));
 	const stats = pathStats(path, progress);
 	const next = nextUp(path, progress);
 	const editing = !!token;
@@ -46,7 +45,7 @@ export function PathPage({
 						{next?.kind === "part" && (
 							<button
 								type="button"
-								onClick={() => setOpenCourse(next.course)}
+								onClick={() => dialog.open(next.course)}
 								className="grid gap-0.5 text-left text-primary underline-offset-4 hover:underline"
 							>
 								<span dir="auto" className="font-medium">
@@ -94,7 +93,7 @@ export function PathPage({
 											<span className="tabular-nums">{index + 1}.</span>
 											<span className="min-w-0 flex-1">{stage.title}</span>
 											<span className="text-sm tabular-nums">
-												{s.coursesDone}/{s.coursesTotal}
+												{s.parts.done}/{s.parts.total}
 											</span>
 										</a>
 									</li>
@@ -115,23 +114,42 @@ export function PathPage({
 					)}
 				</aside>
 
-				<ol className="grid gap-12">
+				<ol className="grid gap-16">
 				{path.stages.map((stage, index) => {
 					const s = stageStats(stage, progress);
 					const isCurrent = stats.current?.id === stage.id;
 					return (
 						<li key={stage.id} id={`stage-${stage.id}`} className="grid gap-4">
-							<div className="grid gap-1">
-								<div className="flex items-center gap-3 text-sm text-muted-foreground">
-									<span className="tabular-nums">Stage {index + 1}</span>
-									{isCurrent && <Badge variant="outline">Current</Badge>}
-									{s.complete && <Badge variant="secondary">Done</Badge>}
-									<span className="ml-auto tabular-nums">
-										{s.coursesDone}/{s.coursesTotal} courses
+							<div className="grid gap-3">
+								<div className="flex items-baseline gap-3 border-b pb-3 text-sm font-medium tracking-wide text-muted-foreground uppercase">
+									<span>
+										Stage {index + 1}
+										{isCurrent && <span className="text-foreground"> · Current</span>}
+										{s.complete && <span className="text-foreground"> · Done</span>}
+									</span>
+									<span className="ml-auto tabular-nums normal-case">
+										{s.parts.done}/{s.parts.total} parts
 									</span>
 								</div>
 								<h2 className="text-2xl font-semibold tracking-wide text-balance">{stage.title}</h2>
 								<p className="text-muted-foreground">{stage.summary}</p>
+								{s.parts.done > 0 && <Bar value={(s.parts.done / s.parts.total) * 100} className="h-1" />}
+								<label className="flex items-start gap-3 text-sm">
+									{editing ? (
+										<Checkbox
+											id={`checkpoint-${stage.id}`}
+											className="mt-0.5"
+											checked={s.checkpoint}
+											onCheckedChange={() => toggleCheckpoint(stage.id)}
+										/>
+									) : (
+										<DoneMark done={s.checkpoint} className="mt-0.5" />
+									)}
+									<span>
+										<span className="font-medium tracking-wide text-muted-foreground uppercase">Checkpoint · </span>
+										{stage.checkpoint}
+									</span>
+								</label>
 							</div>
 
 							<ul className="divide-y rounded-lg border">
@@ -141,7 +159,7 @@ export function PathPage({
 										<li key={course.id}>
 											<button
 												type="button"
-												onClick={() => setOpenCourse(course)}
+												onClick={() => dialog.open(course)}
 												className="group grid w-full grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-3 text-left transition-colors first:rounded-t-lg last:rounded-b-lg hover:bg-muted/50 focus-visible:outline-2 focus-visible:outline-ring"
 											>
 												<span className="grid gap-0.5">
@@ -167,24 +185,6 @@ export function PathPage({
 								})}
 							</ul>
 
-							<label className="flex items-start gap-3 rounded-lg bg-muted p-4">
-								{editing ? (
-									<Checkbox
-										id={`checkpoint-${stage.id}`}
-										className="mt-0.5"
-										checked={s.checkpoint}
-										onCheckedChange={() => toggleCheckpoint(stage.id)}
-									/>
-								) : (
-									<DoneMark done={s.checkpoint} className="mt-1" />
-								)}
-								<span>
-									<span className="block text-sm font-medium uppercase tracking-wide text-muted-foreground">
-										Checkpoint
-									</span>
-									{stage.checkpoint}
-								</span>
-							</label>
 
 							{stage.extras.length > 0 && (
 								<details>
@@ -217,10 +217,13 @@ export function PathPage({
 			</div>
 
 			<CourseDialog
-				course={openCourse}
+				course={dialog.course}
+				previous={dialog.previous}
+				next={dialog.next}
 				progress={progress}
 				editing={editing}
-				onClose={() => setOpenCourse(null)}
+				onNavigate={dialog.open}
+				onClose={dialog.close}
 				onTogglePart={togglePart}
 				onSetParts={setParts}
 			/>
